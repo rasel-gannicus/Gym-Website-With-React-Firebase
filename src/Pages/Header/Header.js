@@ -17,7 +17,7 @@ const Header = () => {
                     <a href="">Contact</a>
                 </div>
             </div>
-            {/* <Banner></Banner> */}
+            <Banner></Banner>
         </div>
     );
 };
