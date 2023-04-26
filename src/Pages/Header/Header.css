@@ -2,14 +2,25 @@
 .full-header{
     width: 1200px;
     margin: 30px auto;
+    height: 600px;
+    background: url('../../assets/img/bg\ \(1\).jpg') no-repeat;
+    background-position: top center;
+    background-size: cover;
+    color: white;
+    border: 7px solid #4D4E50;
+    border-radius: 10px;
 }
 .header-nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid skyblue;
-    border-radius: 5px;
-    padding: 0 15px;
+    /* border: 2px solid skyblue;
+    border-radius: 5px; */
+    /* padding: 0 45px; */
+    margin: 10px 50px;
+}
+.header-left{
+    text-transform: uppercase;
 }
 
 .header-right a{
@@ -17,7 +28,7 @@
     font-size: 20px;
     font-weight: 600;
     margin: 0 15px;
-    color: black;
+    color: white;
 }
 .header-right a:hover{
     color: #0d73a3;
