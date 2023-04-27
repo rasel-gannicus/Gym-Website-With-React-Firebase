@@ -12,9 +12,9 @@ const Banner = () => {
             <button>Get Started</button>
 
             <div className="social-button">
-                <img src={fbIcon} alt=""/>
-                <img src={twitterIcon} alt=""/>
-                <img src={instaIcon} alt=""/>
+                <a href=""><img src={fbIcon} alt=""/></a>
+                <a href=""><img src={twitterIcon} alt=""/></a>
+                <a href=""><img src={instaIcon} alt=""/></a>
             </div>
         </div>
     );
