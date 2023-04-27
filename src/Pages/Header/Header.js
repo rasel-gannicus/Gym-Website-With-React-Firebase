@@ -23,26 +23,43 @@ const Header = () => {
         menuOne.classList.remove('active');
         menuTwo.classList.remove('active');
     }
-    useEffect(() => {
-        const nav = document.querySelector('.banner-details h1');
-        // const banner = document.querySelector('.header-nav');
 
-        if (window.innerWidth > 768) {
-            function handleScroll() {
-                if (window.scrollY > nav.offsetHeight) {
-                    setIsSticky(true);
-                } else {
-                    setIsSticky(false)
-                }
-            }
 
-            window.addEventListener('scroll', handleScroll);
-            return () => {
-                window.removeEventListener('scroll', handleScroll);
-            }
+    function handleResize() {
+        const nav = document.querySelector('header-nav');
+    
+        if (window.innerWidth <= 768) {
+          setIsSticky(false);
         }
-
-    }, [])
+      }
+    
+      function handleScroll() {
+        const nav = document.querySelector('header-nav');
+        const banner = document.querySelector('.banner-details h1');
+    
+        if (window.innerWidth > 768) {
+          if (window.scrollY > banner.offsetHeight) {
+            setIsSticky(true);
+          } else {
+            setIsSticky(false);
+          }
+        } else {
+            setIsSticky(false);
+        }
+      }
+    
+      useEffect(() => {
+        handleResize();
+        handleScroll();
+    
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('scroll', handleScroll);
+    
+        return () => {
+          window.removeEventListener('resize', handleResize);
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
     return (
         <div className="full-header">
             <div className={!isSticky ? 'header-nav' : 'header-nav sticky'}>
