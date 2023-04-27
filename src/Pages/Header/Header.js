@@ -28,7 +28,7 @@ const Header = () => {
     function handleResize() {
         const nav = document.querySelector('header-nav');
     
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 481) {
           setIsSticky(false);
         }
       }
@@ -37,7 +37,7 @@ const Header = () => {
         const nav = document.querySelector('header-nav');
         const banner = document.querySelector('.banner-details h1');
     
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 481) {
           if (window.scrollY > banner.offsetHeight) {
             setIsSticky(true);
           } else {
