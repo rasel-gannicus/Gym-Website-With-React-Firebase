@@ -27,7 +27,7 @@
   border-radius: 10px;
   padding: 0 25px;
   background: black;
-  border: 2px solid #4D4E50;
+  border: 2px solid #0EACF5;
 }
 .header-left{
     text-transform: uppercase;
@@ -68,7 +68,7 @@ For mobile:
       background-position: center  !important;
       margin-top: 25%;
   }
-  .header-nav{
+  .header-nav, .header-nav.sticky{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,6 +78,7 @@ For mobile:
     top: 0;
     left: 0;
     width: 100%;
+    border: none;
 }
   .header-left{
     margin-left: 5%;
@@ -138,10 +139,40 @@ For mobile:
   /*--------------------------------------------------- 
   For ipads, tablet:  
   ---------------------------------------------------*/
-  @media only screen and (min-width:481px) and (max-width:768px) {}
+  @media only screen and (min-width:481px) and (max-width:768px) {
+    .full-header{
+      width:90% !important;
+      margin: 30px auto;
+      min-height: 600px;
+      background-position: center  !important;
+      margin-top: 25%;
+  }
+  .header-right a{
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 7px;
+    color: white;
+}
+  }
   
   /*-----------------------------------------
    For Small screen, laptop:  
   -----------------------------------------*/
-  @media only screen and (min-width:769px) and (max-width:1024px) {}
+  @media only screen and (min-width:769px) and (max-width:1024px) {
+    .full-header{
+      width:90% !important;
+      margin: 30px auto;
+      min-height: 600px;
+      background-position: center  !important;
+      margin-top: 25%;
+  }
+  .header-right a{
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 7px;
+    color: white;
+}
+  }
   

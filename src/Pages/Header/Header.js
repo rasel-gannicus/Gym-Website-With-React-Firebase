@@ -27,17 +27,19 @@ const Header = () => {
         const nav = document.querySelector('.banner-details h1');
         // const banner = document.querySelector('.header-nav');
 
-        function handleScroll() {
-            if (window.scrollY > nav.offsetHeight) {
-                setIsSticky(true);
-            } else {
-                setIsSticky(false)
+        if (window.innerWidth > 768) {
+            function handleScroll() {
+                if (window.scrollY > nav.offsetHeight) {
+                    setIsSticky(true);
+                } else {
+                    setIsSticky(false)
+                }
             }
-        }
 
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.addEventListener('scroll', handleScroll);
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            }
         }
 
     }, [])
