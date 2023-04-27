@@ -9,14 +9,12 @@
     color: white;
     border: 7px solid #4D4E50;
     border-radius: 10px;
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.5);
 }
 .header-nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border: 2px solid skyblue;
-    border-radius: 5px; */
-    /* padding: 0 45px; */
     margin: 5px 50px;
 }
 .header-left{
@@ -33,3 +31,72 @@
 .header-right a:hover{
     color: #0d73a3;
 }
+
+
+/* --- menu icon --- */
+.menu-icon img{
+  width: 40px;
+  cursor: pointer;
+}
+
+.menuOne, .menuTwo, .menu-icon {
+  display: none;
+}
+
+
+/*--------------------------------------------------------------------------
+For mobile:  
+---------------------------------------------------------------------------*/
+@media only screen and (max-width:480px){
+    /* --- Banner section --- */
+    .full-header{
+      width:90% !important;
+      margin: 30px auto;
+      min-height: 600px;
+      background-position: center  !important;
+  }
+  .header-nav{
+    /* flex-direction: column; */
+    margin: 0 15px;
+  }
+  .header-right{
+    display: none;
+  }
+  .banner-details{
+    width: 90% !important;
+    margin-left: 15px !important;
+    margin-top: 80px;
+  }
+  .banner-details h1 { 
+    font-size: 25px;
+    line-height: 60px;
+    font-weight: 600;
+  }
+
+  .menu-icon{
+    display: block;
+  }
+  .menuOne{
+    display: block;
+  }
+  .menuOne.active{
+    display: none;
+  }
+  
+  .menuTwo.active{
+    display: block;
+  }
+  
+  
+  }
+  
+  /*--------------------------------------------------- 
+  For ipads, tablet:  
+  ---------------------------------------------------*/
+  @media only screen and (min-width:481px) and (max-width:768px) {}
+  
+  /*-----------------------------------------
+   For Small screen, laptop:  
+  -----------------------------------------*/
+  @media only screen and (min-width:769px) and (max-width:1024px) {}
+  

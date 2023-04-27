@@ -1,6 +1,8 @@
 import React from 'react';
 import Banner from './Banner/Banner';
 import './Header.css';
+import menuTwo from '../../assets/img/menu.png';
+import menuOne from '../../assets/img/menu (1).png';
 
 const Header = () => {
     return (
@@ -9,12 +11,16 @@ const Header = () => {
                 <div className="header-left">
                     <h1>Fitness</h1>
                 </div>
-                <div className="header-right">
+                 <div className="header-right">
                     <a href="">Home</a>
                     <a href="">About</a>
                     <a href="">Trainers</a>
                     <a href="">Blog</a>
                     <a href="">Contact</a>
+                </div>
+                <div className="menu-icon">
+                    <img className="menuOne" src={menuOne} alt=""/>
+                    <img className="menuTwo" src={menuTwo} alt=""/>
                 </div>
             </div>
             <Banner></Banner>
