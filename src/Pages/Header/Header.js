@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Banner from './Banner/Banner';
 import './Header.css';
 import menuTwo from '../../assets/img/menu.png';
 import menuOne from '../../assets/img/menu (1).png';
 
 const Header = () => {
+    const [isSticky, setIsSticky] = useState(false);
 
     const displayMenu = () => {
         const menuOne = document.querySelector('.menuOne');
@@ -22,9 +23,27 @@ const Header = () => {
         menuOne.classList.remove('active');
         menuTwo.classList.remove('active');
     }
+    useEffect(() => {
+        const nav = document.querySelector('.banner-details h1');
+        // const banner = document.querySelector('.header-nav');
+
+        function handleScroll() {
+            if (window.scrollY > nav.offsetHeight) {
+                setIsSticky(true);
+            } else {
+                setIsSticky(false)
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+
+    }, [])
     return (
         <div className="full-header">
-            <div className="header-nav">
+            <div className={!isSticky ? 'header-nav' : 'header-nav sticky'}>
                 <div className="header-left">
                     <h1>Fitness</h1>
                 </div>
