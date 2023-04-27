@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Banner from './Banner/Banner';
 import './Header.css';
 import menuTwo from '../../assets/img/menu.png';
 import menuOne from '../../assets/img/menu (1).png';
 
 const Header = () => {
+
+    const displayMenu = () => {
+        const menuOne = document.querySelector('.menuOne');
+        const menuTwo = document.querySelector('.menuTwo');
+        menuOne.classList.add('active');
+        menuTwo.classList.add('active');
+    }
+    const hideMenu = () => {
+        const menuOne = document.querySelector('.menuOne');
+        const menuTwo = document.querySelector('.menuTwo');
+        menuOne.classList.remove('active');
+        menuTwo.classList.remove('active');
+    }
     return (
         <div className="full-header">
             <div className="header-nav">
@@ -19,8 +32,8 @@ const Header = () => {
                     <a href="">Contact</a>
                 </div>
                 <div className="menu-icon">
-                    <img className="menuOne" src={menuOne} alt=""/>
-                    <img className="menuTwo" src={menuTwo} alt=""/>
+                    <img  onClick={displayMenu}  className="menuOne" src={menuOne} alt=""/>
+                    <img onClick={hideMenu}  className="menuTwo" src={menuTwo} alt=""/>
                 </div>
             </div>
             <Banner></Banner>
