@@ -1,0 +1,29 @@
+
+
+.about-section{
+    margin: 140px;
+}
+.about-main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 100px;
+}
+.about-single{
+    color: #7F7F7F;
+}
+.about-single img{
+    width: 100px;
+}
+.about-single-header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+.about-single-header {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.about-single-details{
+    text-align: end;
+}
