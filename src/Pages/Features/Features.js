@@ -15,11 +15,9 @@ const Features = () => {
             <div className="feature-details">
                 <div className="feature-single">
                     <img src={feature1} alt="" />
-                    <div className="">
                         <div className="feature-single-details">
                             <h2>Get In Mood</h2>
                             <p>Use a past defeat as a motivator. Remind yourself.</p>
-                        </div>
                     </div>
                 </div>
                 <div className="feature-single">
@@ -32,7 +30,7 @@ const Features = () => {
                 <div className="feature-single">
                     <img src={feature3} alt="" />
                     <div className="feature-single-details">
-                        <h2>Work Your Butt Off</h2>
+                        <h2>Work Hard </h2>
                         <p>For those of you who are serious about having more.</p>
                     </div>
                 </div>

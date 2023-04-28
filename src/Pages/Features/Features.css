@@ -45,6 +45,8 @@
 .feature-single-details {
     color: #7F7F7F;
     width: 60%;
+    max-height: 60%;
+    overflow: hidden;
     border: 1px solid #7f7f7f80;
     padding: 0 15px;
     position: absolute;
@@ -52,7 +54,37 @@
     transform: translateX(-50%);
     bottom: -25%;
     background: black;
+    overflow-y: auto;
 }
+.feature-single-details h2{
+    font-size: calc(1vw + 1vh + 1vmin);
+    text-transform: uppercase;
+}
+.feature-single-details p{
+    font-size: calc(0.5vw + 0.5vh + 1vmin);
+}
+
+/* Set the width and height of the scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: #0e0d0d;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
 
 
 
@@ -60,6 +92,7 @@
 For mobile:  
 ---------------------------------------------------------------------------*/
 @media only screen and (max-width:480px){
+    
     .feature-details {
         display: flex;
         flex-direction: column;
@@ -74,9 +107,29 @@ For mobile:
 /*--------------------------------------------------- 
 For ipads, tablet:  
 ---------------------------------------------------*/
-@media only screen and (min-width:481px) and (max-width:768px) {}
+@media only screen and (min-width:481px) and (max-width:768px) {
+    .feature-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        row-gap: 130px;
+        text-align: center;
+        position: relative;
+    }
+}
 
 /*-----------------------------------------
  For Small screen, laptop:  
 -----------------------------------------*/
-@media only screen and (min-width:769px) and (max-width:1024px) {}
+@media only screen and (min-width:769px) and (max-width:1024px) {
+    .feature-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        row-gap: 130px;
+        text-align: center;
+        position: relative;
+    }
+}
