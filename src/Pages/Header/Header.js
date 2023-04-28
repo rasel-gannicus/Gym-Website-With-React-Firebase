@@ -26,15 +26,12 @@ const Header = () => {
 
 
     function handleResize() {
-        const nav = document.querySelector('header-nav');
-    
         if (window.innerWidth <= 481) {
           setIsSticky(false);
         }
       }
     
       function handleScroll() {
-        const nav = document.querySelector('header-nav');
         const banner = document.querySelector('.banner-details h1');
     
         if (window.innerWidth > 481) {
