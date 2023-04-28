@@ -35,56 +35,38 @@
 
 .feature-single img {
     width: 80%;
+    position: relative;
 }
 
 .feature-single {
     position: relative;
     z-index: 100;
+    overflow: visible;
 }
 
 .feature-single-details {
     color: #7F7F7F;
     width: 60%;
-    max-height: 60%;
+    height: 50%;
     overflow: hidden;
     border: 1px solid #7f7f7f80;
     padding: 0 15px;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    top: 150%;
+    transform: translate(-50%, -150%);
     bottom: -25%;
     background: black;
     overflow-y: auto;
+    z-index: 1150;
 }
 .feature-single-details h2{
-    font-size: calc(1vw + 1vh + 1vmin);
+    /* font-size: calc(1vw + 1vh + 1vmin); */
     text-transform: uppercase;
 }
 .feature-single-details p{
-    font-size: calc(0.5vw + 0.5vh + 1vmin);
+    /* font-size: calc(0.5vw + 0.5vh + 1vmin); */
 }
-
-/* Set the width and height of the scrollbar */
-::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background-color: #0e0d0d;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background-color: #000000;
-    border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-  }
 
 
 

@@ -20,7 +20,7 @@
 }
 .header-nav.sticky{
   position: fixed;
-  top: -10px;
+  top: 5px;
   left: 50%;
   transform: translateX(-50%);
   margin: 0 auto;

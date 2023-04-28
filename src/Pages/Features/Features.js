@@ -10,14 +10,14 @@ const Features = () => {
             <div className="feature-title">
                 <h4>Why us ? </h4>
                 <h1>Our Key Features</h1>
-                <hr/>
+                <hr />
             </div>
             <div className="feature-details">
                 <div className="feature-single">
                     <img src={feature1} alt="" />
-                        <div className="feature-single-details">
-                            <h2>Get In Mood</h2>
-                            <p>Use a past defeat as a motivator. Remind yourself.</p>
+                    <div className="feature-single-details">
+                        <h2>Get In Mood</h2>
+                        <p>Use a past defeat as a motivator. Remind yourself.</p>
                     </div>
                 </div>
                 <div className="feature-single">
