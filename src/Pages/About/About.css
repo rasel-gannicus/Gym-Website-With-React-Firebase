@@ -16,7 +16,7 @@
 }
 .about-header hr {
     border: none;
-    border-top: 3px solid #56A7F4;
+    border-top: 3px solid red;
     margin-bottom: 50px;
     width: 50%;
 }
@@ -35,7 +35,7 @@
     color: #7F7F7F;
 }
 .about-single img{
-    width: 100px;
+    width: 80px;
 }
 .about-single-header{
     display: flex;
@@ -49,4 +49,8 @@
 }
 .about-single-details{
     text-align: end;
+}
+
+.about-mid img{
+    width: 120%;
 }

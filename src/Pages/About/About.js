@@ -1,6 +1,7 @@
 import React from 'react';
 import './About.css';
 import equip1 from '../../assets/img/cycling.png';
+import bodyPic from '../../assets/img/pxfuel (7).jpg';
 
 const About = () => {
     return (
@@ -40,7 +41,11 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className="about-main"></div>
+
+                <div className="about-main about-mid">
+                    <img src={bodyPic} alt=""/>
+                </div>
+
                 <div className="about-main">
                     <div className="about-single">
                         <div className="about-single-header">
