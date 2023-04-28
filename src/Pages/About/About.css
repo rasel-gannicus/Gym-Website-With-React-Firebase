@@ -54,3 +54,46 @@
 .about-mid img{
     width: 120%;
 }
+
+
+
+/*--------------------------------------------------------------------------
+For mobile:  
+---------------------------------------------------------------------------*/
+@media only screen and (max-width:480px){
+    .about-section{
+        margin: 180px 15px;
+    }
+    .about-mains{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 70px;
+    }
+    .about-single-header{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 10px;
+    }
+    .about-single-header h2{
+        font-size: 18px;
+    }
+    .about-single-details{
+        text-align: justify;
+    }
+    .about-mid img{
+        display: none;
+    }
+}
+
+/*--------------------------------------------------- 
+For ipads, tablet:  
+---------------------------------------------------*/
+@media only screen and (min-width:481px) and (max-width:768px) {}
+
+/*-----------------------------------------
+ For Small screen, laptop:  
+-----------------------------------------*/
+@media only screen and (min-width:769px) and (max-width:1024px) {}
