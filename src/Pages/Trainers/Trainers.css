@@ -1,0 +1,17 @@
+
+.trainer-div{
+    margin: 150px auto;
+    background: white;
+    color: black;
+    padding: 120px 10%;
+}
+
+.trainer-header{
+    text-align: center;
+}
+.trainer-header hr {
+    border: none;
+    border-top: 3px solid #0EACF5;
+    margin-bottom: 50px;
+    width: 50%;
+}
