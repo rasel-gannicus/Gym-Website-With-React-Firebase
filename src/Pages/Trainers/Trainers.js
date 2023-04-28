@@ -3,7 +3,7 @@ import './Trainers.css';
 import trainer1 from "../../assets/img/02.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookF } from "@fortawesome/free-brands-svg-icons"
+import { faFacebookF, faTwitter, faInstagram, faPinterest } from "@fortawesome/free-brands-svg-icons"
 
 
 
@@ -29,13 +29,13 @@ const Trainers = () => {
                             <FontAwesomeIcon icon={faFacebookF} />
                         </div>
                         <div className="trainer-social-icons">
-                            <FontAwesomeIcon icon={faFacebookF} />
+                            <FontAwesomeIcon icon={faTwitter} />
                         </div>
                         <div className="trainer-social-icons">
-                            <FontAwesomeIcon icon={faFacebookF} />
+                            <FontAwesomeIcon icon={faInstagram} />
                         </div>
                         <div className="trainer-social-icons">
-                            <FontAwesomeIcon icon={faFacebookF} />
+                            <FontAwesomeIcon icon={faPinterest} />
                         </div>
                     </div>
                 </div>
