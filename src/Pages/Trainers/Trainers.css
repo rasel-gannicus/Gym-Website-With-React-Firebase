@@ -18,6 +18,9 @@
 
 
 /* --- trainer card section --- */
+.trainer-card{
+    position: relative;
+}
 .trainer-details{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -39,4 +42,23 @@
 }
 .trainer-info p{
     margin: 5px 0;
+}
+
+/* --- trainer social icons div --- */
+.trainer-social{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(-5%, -50%);
+}
+.trainer-social-icons{
+    background: #0EACF5;
+    margin: 10px;
+    font-size: 22px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
