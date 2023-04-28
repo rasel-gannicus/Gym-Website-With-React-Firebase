@@ -39,6 +39,7 @@
 
 .feature-single {
     position: relative;
+    z-index: 100;
 }
 
 .feature-single-details {
@@ -52,3 +53,30 @@
     bottom: -25%;
     background: black;
 }
+
+
+
+/*--------------------------------------------------------------------------
+For mobile:  
+---------------------------------------------------------------------------*/
+@media only screen and (max-width:480px){
+    .feature-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 130px;
+        text-align: center;
+        position: relative;
+    }
+}
+
+/*--------------------------------------------------- 
+For ipads, tablet:  
+---------------------------------------------------*/
+@media only screen and (min-width:481px) and (max-width:768px) {}
+
+/*-----------------------------------------
+ For Small screen, laptop:  
+-----------------------------------------*/
+@media only screen and (min-width:769px) and (max-width:1024px) {}
