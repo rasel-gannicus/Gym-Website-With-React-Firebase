@@ -3,10 +3,33 @@
 .about-section{
     margin: 140px;
 }
-.about-main{
+.about-header{
+    text-align: center;
+}
+.about-header p{
+    font-size: 20px;
+    margin: 0;
+}
+.about-header h1{
+    font-size: 35px;
+    margin-bottom: 0;
+}
+.about-header hr {
+    border: none;
+    border-top: 3px solid #56A7F4;
+    margin-bottom: 50px;
+    width: 50%;
+}
+
+.about-mains{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 100px;
+    margin-top: 70px;
+}
+.about-main{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 .about-single{
     color: #7F7F7F;
