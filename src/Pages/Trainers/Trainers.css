@@ -27,7 +27,7 @@
     grid-template-columns: repeat(4, 1fr);
 }
 .trainer-pic img{
-    width:300px
+    width:100%
 }
 .trainer-info{
     background: black;
@@ -39,7 +39,7 @@
 .trainer-info h3{
     font-size: 20px;
     margin: 0;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 .trainer-info p{
     margin: 5px 0;
