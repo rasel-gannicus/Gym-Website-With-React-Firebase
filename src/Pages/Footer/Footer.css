@@ -4,6 +4,11 @@
 .footer-section{
     padding: 30px 0;
     background: #0C0C0C;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    z-index: 20;
 }
 .footer-upper{
     display: grid;

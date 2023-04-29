@@ -1,0 +1,25 @@
+
+
+.error-page{
+    background: white;
+    color: black;
+    width: 80%;
+    height: 300px;
+    padding: 5rem 0;
+    margin: 50px auto;
+    border-radius: 10px;
+    text-align: center;
+}
+.error-page button{
+    padding: 10px 50px;
+    border: 2px solid red;
+    background: #DA1D25;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.error-page h2{
+    color: red;
+    font-size: 50px;
+    font-weight: 400;
+}

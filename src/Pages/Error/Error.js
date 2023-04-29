@@ -1,9 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
+import './Error.css';
 
 const Error = () => {
+    const navigation = useNavigate();
+    const backHome = () => {
+        navigation('/');
+    }
     return (
-        <div>
-            <h2>Error not found</h2>
+        <div className="error-page">
+            <h2>Error 404 <br/> Page not found</h2>
+            <button onClick={backHome}>Back Home</button>
         </div>
     );
 };
