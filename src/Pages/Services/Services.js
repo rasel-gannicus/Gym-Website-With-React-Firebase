@@ -14,36 +14,23 @@ const Services = () => {
             <div className="service-header">
                 <h2>Try</h2>
                 <h1>Our Exclusive Services</h1>
-                <hr/>
+                <hr />
             </div>
             <div className="service-details">
                 <div className="service-card">
-                    <img src={service1} alt=""/>
-                    <div className="special-icon1">
-                        $ 150
-                    </div>
-                    <div className="special-icon2">
-                        3 Months
-                    </div>
-                    <div className="special-icon3">
-                        7hrs/week
-                    </div>
-                    <div className="card-details">
-                        <h2>Private & Group Lessons</h2>
-                        <p>Give yourself the power of responsibility the only thing stopping you is yourself.</p>
-                    </div>
-                    <button>Purchase Plan</button>
-                </div>
-                <div className="service-card">
-                    <img src={service2} alt=""/>
-                    <div className="special-icon1">
-                        $ 150
-                    </div>
-                    <div className="special-icon2">
-                        3 Months
-                    </div>
-                    <div className="special-icon3">
-                        7hrs/week
+                    <div className="service-img">
+                        <img src={service5} alt="" />
+                        <div className="special-icons">
+                            <div className="special-icon1">
+                                $ 150
+                            </div>
+                            <div className="special-icon2">
+                                3 Months
+                            </div>
+                            <div className="special-icon3">
+                                7hrs/week
+                            </div>
+                        </div>
                     </div>
                     <div className="card-details">
                         <h2>Private & Group Lessons</h2>
@@ -52,32 +39,19 @@ const Services = () => {
                     <button>Purchase Plan</button>
                 </div>
                 <div className="service-card">
-                    <img src={service3} alt=""/>
-                    <div className="special-icon1">
-                        $ 150
-                    </div>
-                    <div className="special-icon2">
-                        3 Months
-                    </div>
-                    <div className="special-icon3">
-                        7hrs/week
-                    </div>
-                    <div className="card-details">
-                        <h2>Private & Group Lessons</h2>
-                        <p>Give yourself the power of responsibility the only thing stopping you is yourself.</p>
-                    </div>
-                    <button>Purchase Plan</button>
-                </div>
-                <div className="service-card">
-                    <img src={service4} alt=""/>
-                    <div className="special-icon1">
-                        $ 150
-                    </div>
-                    <div className="special-icon2">
-                        3 Months
-                    </div>
-                    <div className="special-icon3">
-                        7hrs/week
+                    <div className="service-img">
+                        <img src={service5} alt="" />
+                        <div className="special-icons">
+                            <div className="special-icon1">
+                                $ 150
+                            </div>
+                            <div className="special-icon2">
+                                3 Months
+                            </div>
+                            <div className="special-icon3">
+                                7hrs/week
+                            </div>
+                        </div>
                     </div>
                     <div className="card-details">
                         <h2>Private & Group Lessons</h2>
@@ -86,15 +60,19 @@ const Services = () => {
                     <button>Purchase Plan</button>
                 </div>
                 <div className="service-card">
-                    <img src={service5} alt=""/>
-                    <div className="special-icon1">
-                        $ 150
-                    </div>
-                    <div className="special-icon2">
-                        3 Months
-                    </div>
-                    <div className="special-icon3">
-                        7hrs/week
+                    <div className="service-img">
+                        <img src={service5} alt="" />
+                        <div className="special-icons">
+                            <div className="special-icon1">
+                                $ 150
+                            </div>
+                            <div className="special-icon2">
+                                3 Months
+                            </div>
+                            <div className="special-icon3">
+                                7hrs/week
+                            </div>
+                        </div>
                     </div>
                     <div className="card-details">
                         <h2>Private & Group Lessons</h2>
@@ -103,15 +81,62 @@ const Services = () => {
                     <button>Purchase Plan</button>
                 </div>
                 <div className="service-card">
-                    <img src={service6} alt=""/>
-                    <div className="special-icon1">
-                        $ 150
+                    <div className="service-img">
+                        <img src={service5} alt="" />
+                        <div className="special-icons">
+                            <div className="special-icon1">
+                                $ 150
+                            </div>
+                            <div className="special-icon2">
+                                3 Months
+                            </div>
+                            <div className="special-icon3">
+                                7hrs/week
+                            </div>
+                        </div>
                     </div>
-                    <div className="special-icon2">
-                        3 Months
+                    <div className="card-details">
+                        <h2>Private & Group Lessons</h2>
+                        <p>Give yourself the power of responsibility the only thing stopping you is yourself.</p>
                     </div>
-                    <div className="special-icon3">
-                        7hrs/week
+                    <button>Purchase Plan</button>
+                </div>
+                <div className="service-card">
+                    <div className="service-img">
+                        <img src={service5} alt="" />
+                        <div className="special-icons">
+                            <div className="special-icon1">
+                                $ 150
+                            </div>
+                            <div className="special-icon2">
+                                3 Months
+                            </div>
+                            <div className="special-icon3">
+                                7hrs/week
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card-details">
+                        <h2>Private & Group Lessons</h2>
+                        <p>Give yourself the power of responsibility the only thing stopping you is yourself.</p>
+                    </div>
+                    <button>Purchase Plan</button>
+                </div>
+                <div className="service-card">
+                    <div className="service-img">
+                        <img src={service5} alt="" />
+                        <div className="special-icons">
+                            <div className="special-icon1">
+                                $ 150
+                            </div>
+                            <div className="special-icon2">
+                                3 Months
+                            </div>
+                            <div className="special-icon3">
+                                7hrs/week
+                            </div>
+                        </div>
                     </div>
                     <div className="card-details">
                         <h2>Private & Group Lessons</h2>

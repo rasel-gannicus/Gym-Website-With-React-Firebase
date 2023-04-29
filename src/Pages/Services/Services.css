@@ -52,15 +52,19 @@
     color: white;
 }
 
+.special-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .special-icon1 , .special-icon2, .special-icon3{
     background: #0EACF5;
     padding: 10px 15px;
     font-weight: 500;
     font-size: 18px;
-    position: absolute;
     color: #2a2a2a;
 }
-.special-icon1{
+/* .special-icon1{
     top: 52%;
     left: 5%;
     transform: translate(-5%, -52%);
@@ -74,4 +78,4 @@
     top: 52%;
     left: 97%;
     transform: translate(-97%, -52%);
-}
+} */
