@@ -3,6 +3,7 @@ import Banner from './Banner/Banner';
 import './Header.css';
 import menuTwo from '../../assets/img/menu.png';
 import menuOne from '../../assets/img/menu (1).png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [isSticky, setIsSticky] = useState(false);
@@ -69,7 +70,7 @@ const Header = () => {
                         <a href="">About</a>
                         <a href="">Trainers</a>
                         <a href="">Blog</a>
-                        <a href="">Contact</a>
+                        <Link to="/login">Login</Link>
                     </div>
                 </div>
                 <div className="menu-icon">
