@@ -24,6 +24,8 @@
     margin: 70px auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+    column-gap: 30px;
 }
 
 .service-card{
@@ -59,17 +61,17 @@
     color: #2a2a2a;
 }
 .special-icon1{
-    top: 55%;
+    top: 52%;
     left: 5%;
-    transform: translate(-5%, -55%);
+    transform: translate(-5%, -52%);
 }
 .special-icon2{
-    top: 55%;
-    left: 40%;
-    transform: translate(-40%, -55%);
+    top: 52%;
+    left: 41%;
+    transform: translate(-41%, -52%);
 }
 .special-icon3{
-    top: 55%;
-    left: 95%;
-    transform: translate(-95%, -55%);
+    top: 52%;
+    left: 97%;
+    transform: translate(-97%, -52%);
 }
