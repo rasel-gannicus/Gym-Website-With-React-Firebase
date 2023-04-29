@@ -1,20 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './Pages/Header/Header';
-import Features from './Pages/Features/Features';
-import About from './Pages/About/About';
-import Trainers from './Pages/Trainers/Trainers';
-import Services from './Pages/Services/Services';
 import Footer from './Pages/Footer/Footer';
+import Home from './Pages/Home/Home';
+import { Route, Routes } from 'react-router';
+import Error from './Pages/Error/Error';
 
 function App() {
   return (
     <div>
-      <Header></Header>
-      <Features></Features>
-      <About></About>
-      <Trainers></Trainers>
-      <Services></Services>
+      <Routes>
+        <Route path="/" element={<Home></Home>} ></Route>
+        <Route path="*" element={<Error></Error>} ></Route>
+      </Routes>
       <Footer></Footer>
 
     </div>
