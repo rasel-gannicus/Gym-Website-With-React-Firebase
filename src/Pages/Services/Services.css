@@ -50,14 +50,26 @@
     color: white;
 }
 
-.special-icon1{
+.special-icon1 , .special-icon2, .special-icon3{
     background: #0EACF5;
     padding: 10px 15px;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 18px;
     position: absolute;
+    color: #2a2a2a;
+}
+.special-icon1{
     top: 55%;
-    left: 10%;
-    transform: translate(-10%, -55%);
-    border: 1px solid rgba(128, 128, 128, 0.431);
+    left: 5%;
+    transform: translate(-5%, -55%);
+}
+.special-icon2{
+    top: 55%;
+    left: 40%;
+    transform: translate(-40%, -55%);
+}
+.special-icon3{
+    top: 55%;
+    left: 95%;
+    transform: translate(-95%, -55%);
 }

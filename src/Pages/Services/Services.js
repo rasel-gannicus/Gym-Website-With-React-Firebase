@@ -16,6 +16,12 @@ const Services = () => {
                     <div className="special-icon1">
                         $ 150
                     </div>
+                    <div className="special-icon2">
+                        3 Months
+                    </div>
+                    <div className="special-icon3">
+                        7hrs/week
+                    </div>
                     <div className="card-details">
                         <h2>Private & Group Lessons</h2>
                         <p>Give yourself the power of responsibility the only thing stopping you is yourself.</p>
