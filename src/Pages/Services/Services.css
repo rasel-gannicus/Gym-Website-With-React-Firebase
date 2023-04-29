@@ -56,13 +56,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    margin: auto;
+    width: 85%;
+    background: #0EACF5;
+    padding: 5px 10px;
+    font-weight: 500;
+    /* font-size: calc(0.5vw + 0.5vh + 1vmin); */
+}
+.special-icons p{
+    margin: 3% 4%;
 }
 .special-icon1 , .special-icon2, .special-icon3{
     background: #0EACF5;
-    padding: 10px 15px;
+    padding: 5px 10px;
     font-weight: 500;
-    font-size: 18px;
+    /* font-size: calc(0.5vw + 0.5vh + 1vmin); */
     color: #2a2a2a;
+    /* border-right: 1px solid black; */
 }
 /* .special-icon1{
     top: 52%;
@@ -79,3 +90,46 @@
     left: 97%;
     transform: translate(-97%, -52%);
 } */
+
+
+/*--------------------------------------------------------------------------
+For mobile:  
+---------------------------------------------------------------------------*/
+@media only screen and (max-width:480px){
+    .service-details{
+        width: 80%;
+        margin: 70px auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 30px;
+        column-gap: 30px;
+    }
+}
+
+/*--------------------------------------------------- 
+For ipads, tablet:  
+---------------------------------------------------*/
+@media only screen and (min-width:481px) and (max-width:768px) {
+    .service-details{
+        width: 80%;
+        margin: 70px auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 30px;
+        column-gap: 30px;
+    }
+}
+
+/*-----------------------------------------
+ For Small screen, laptop:  
+-----------------------------------------*/
+@media only screen and (min-width:769px) and (max-width:1024px) {
+    .service-details{
+        width: 80%;
+        margin: 70px auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 30px;
+        column-gap: 30px;
+    }
+}
