@@ -18,3 +18,8 @@
     text-align: left;
     margin-left: 18%;
 }
+
+.disabled-button{
+    background: rgb(182, 177, 177) !important;
+    cursor:no-drop !important;
+}

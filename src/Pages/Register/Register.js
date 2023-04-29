@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Register.css';
 
 const Register = () => {
+    const[isAgree, setIsAgree] = useState(false);
     return (
         <div className="login-div">
             <h2>Register</h2>
@@ -21,10 +22,10 @@ const Register = () => {
                     <div className="">
                         <input type="password" name="" placeholder="Confirm Password" id="" />
                         <div className="agree-div">
-                        <input type="checkbox" name="" id=""/>
+                        <input onChange={() => setIsAgree(!isAgree)} type="checkbox" name="" id="" value={isAgree} />
                         <p>Agree to the terms and conditions</p>
                         </div>
-                        <button>Register</button>
+                        <button disabled={!isAgree} className={isAgree ? "" : "disabled-button"} >Register</button>
                     </div>
                 </form>
             </div>
