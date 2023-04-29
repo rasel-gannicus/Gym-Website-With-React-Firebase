@@ -1,0 +1,100 @@
+
+
+
+.footer-section{
+    padding: 30px 0;
+    background: #0C0C0C;
+}
+.footer-upper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 80%;
+    margin: 30px auto;
+    color: #858585;
+}
+.footer-upper h2{
+    text-transform: uppercase;
+    font-size: 25px;
+}
+.footer-upper p{
+    font-size: 14px;
+}
+.phone-number{
+    color: #DA1D25;
+    font-weight: 400;
+    font-size: 30px;
+    margin-top: -15px;
+}
+
+.footer-single{
+    display: flex;
+    flex-direction: column;
+}
+.footer-single a{
+    text-decoration: none;
+    color: unset;
+    margin: 5px 0;
+}
+
+.footer-subscribe input{
+    margin: 15px 0;
+    width: 100%;
+    box-sizing: border-box;
+    height: 50px;
+    font-size: 18px;
+    padding: 0 10px;
+    background: #252525;
+    outline: none;
+    border: none;
+}
+
+.footer-subscribe button{
+    height: 50px;
+    margin-top: 10px;
+    width: 50%;
+    background: #DA1D25;
+    border: none;
+    color: white;
+    font-size: 18px;
+}
+
+
+
+/*--------------------------------------------------------------------------
+For mobile:  
+---------------------------------------------------------------------------*/
+@media only screen and (max-width:480px){
+    .footer-upper{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 80%;
+        margin: 30px auto;
+        color: #858585;
+    }
+}
+
+/*--------------------------------------------------- 
+For ipads, tablet:  
+---------------------------------------------------*/
+@media only screen and (min-width:481px) and (max-width:768px) {
+    .footer-upper{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 80%;
+        margin: 30px auto;
+        color: #858585;
+    }
+}
+
+/*-----------------------------------------
+ For Small screen, laptop:  
+-----------------------------------------*/
+@media only screen and (min-width:769px) and (max-width:1024px) {
+    .footer-upper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 80%;
+        margin: 30px auto;
+        color: #858585;
+    }
+}
