@@ -13,6 +13,9 @@ const Services = () => {
             <div className="service-details">
                 <div className="service-card">
                     <img src={service1} alt=""/>
+                    <div className="special-icon1">
+                        $ 150
+                    </div>
                     <div className="card-details">
                         <h2>Private & Group Lessons</h2>
                         <p>Give yourself the power of responsibility the only thing stopping you is yourself.</p>
