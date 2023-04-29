@@ -1,0 +1,80 @@
+
+
+.login-div{
+    margin: 50px auto;
+    background: white;
+    width: 450px;
+    min-height: 500px;
+    color: #2a2a2a;
+}
+.login-div h2{
+    text-align: center;
+    padding-top: 50px;
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+/* .login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid grey;
+} */
+.login-form form div{
+    margin: auto;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-div input{
+    width: 80% !important;
+    box-sizing: border-box;
+    margin: 15px auto;
+    height: 50px;
+    border: 1px solid rgba(128, 128, 128, 0.418);
+    font-size: 18px;
+    padding: 5px 15px;
+    font-weight: 600;
+    color: black;
+}
+.login-div button{
+    padding: 10px 15px;
+    width: 200px;
+    margin: 30px auto;
+    border-radius: unset;
+    border: none;
+    font-size: 18px;
+    background: #0F7FCB;
+    color: white;
+}
+
+.forgot-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row !important;
+}
+.forgot-link a {
+    text-decoration: none;
+    color: #0F7FCB;
+    /* font-weight: 500; */
+}
+
+.forgot-link a:hover{
+    color: navy;
+}
+
+
+@media only screen and (max-width:480px){
+    .login-div{
+        margin: 50px auto;
+        background: white;
+        width: 90%;
+        min-height: 500px;
+        color: #2a2a2a;
+    }
+}

@@ -17,12 +17,7 @@
     margin-bottom: 0;
 }
 
-.feature-title hr {
-    border: none;
-    border-top: 3px solid red;
-    margin-bottom: 50px;
-    width: 100%;
-}
+
 
 .feature-details {
     display: grid;
