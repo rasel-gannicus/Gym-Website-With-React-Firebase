@@ -1,0 +1,20 @@
+
+
+.agree-div{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    text-align: left;
+    width: 100%;
+    position: relative;
+}
+.agree-div input{
+    width: 20px !important;
+    display: inline-block;
+    position: absolute;
+    margin-left:11% ;
+}
+.agree-div p{
+    text-align: left;
+    margin-left: 18%;
+}

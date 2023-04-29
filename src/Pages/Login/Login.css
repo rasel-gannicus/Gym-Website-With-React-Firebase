@@ -6,6 +6,7 @@
     width: 450px;
     min-height: 500px;
     color: #2a2a2a;
+    padding-bottom: 50px;
 }
 .login-div h2{
     text-align: center;
@@ -14,14 +15,7 @@
     margin-bottom: 0;
 }
 
-/* .login-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    border: 1px solid grey;
-} */
+
 .login-form form div{
     margin: auto;
     
