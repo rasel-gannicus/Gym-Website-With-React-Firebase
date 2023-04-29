@@ -51,12 +51,18 @@
     background: #DA1D25;
     color: white;
 }
-
+.service-img{
+    position: relative;
+}
 .special-icons{
     display: flex;
     justify-content: center;
     align-items: center;
     
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
     margin: auto;
     width: 85%;
     background: #0EACF5;
@@ -67,29 +73,6 @@
 .special-icons p{
     margin: 3% 4%;
 }
-.special-icon1 , .special-icon2, .special-icon3{
-    background: #0EACF5;
-    padding: 5px 10px;
-    font-weight: 500;
-    /* font-size: calc(0.5vw + 0.5vh + 1vmin); */
-    color: #2a2a2a;
-    /* border-right: 1px solid black; */
-}
-/* .special-icon1{
-    top: 52%;
-    left: 5%;
-    transform: translate(-5%, -52%);
-}
-.special-icon2{
-    top: 52%;
-    left: 41%;
-    transform: translate(-41%, -52%);
-}
-.special-icon3{
-    top: 52%;
-    left: 97%;
-    transform: translate(-97%, -52%);
-} */
 
 
 /*--------------------------------------------------------------------------
@@ -125,7 +108,7 @@ For ipads, tablet:
 -----------------------------------------*/
 @media only screen and (min-width:769px) and (max-width:1024px) {
     .service-details{
-        width: 80%;
+        width: 90%;
         margin: 70px auto;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
