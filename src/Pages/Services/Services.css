@@ -1,0 +1,50 @@
+
+.service-header{
+    text-align: center;
+    margin-top: -10px;
+}
+.service-header h2{
+    font-size: 28px;
+    margin-bottom: 0;
+}
+.service-header h1{
+    font-size: 40px;
+    margin-top: 10px;
+}
+.service-header hr {
+    border: none;
+    border-top: 3px solid red;
+    margin-bottom: 50px;
+    width: 50%;
+}
+
+/* --- service card --- */
+.service-details{
+    width: 80%;
+    margin: 120px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.service-card{
+    background: white;
+    color: black;
+    text-align: center;
+    padding-bottom: 25px;
+}
+.service-card img{
+    width: 100%;
+}
+.card-details{
+    padding: 10px 15px;
+}
+.service-card button {
+    outline: none;
+    border: none;
+    padding: 5px 15px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #DA1D25;
+    color: white;
+}
