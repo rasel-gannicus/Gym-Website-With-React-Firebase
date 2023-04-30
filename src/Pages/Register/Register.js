@@ -18,13 +18,13 @@ const Register = () => {
     let loader = null ; 
     const errorMsg = (dummy) => toast.error(dummy || 'error', {
         position: "bottom-center",
-        autoClose: 15000,
+        autoClose: 3000,
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
     });
 
     // --- creating user with firebase hooks

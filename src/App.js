@@ -7,6 +7,8 @@ import Error from './Pages/Error/Error';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
