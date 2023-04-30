@@ -5,6 +5,7 @@ import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-
 import auth from '../../utilities/firebase.init';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { toast } from 'react-toastify';
+import { updateProfile } from '@firebase/auth';
 
 
 const Register = () => {
@@ -74,6 +75,14 @@ const Register = () => {
             console.log("User created successfully : ", user);
             successMsg();
             navigate('/');
+            updateProfile(auth.currentUser, {
+                displayName: name, photoURL: "https://example.com/jane-q-user/profile.jpg"
+              }).then(() => {
+                // Profile updated!
+              }).catch((errors) => {
+                // An error occurred
+                console.log(errors)
+              })
         }
     }, [error, loading, user])
     return (
