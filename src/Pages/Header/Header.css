@@ -175,3 +175,11 @@ For mobile:
 }
   }
   
+
+
+  .user-name{
+    text-align: right !important;
+    color: tomato ;
+    margin-right: 15px;
+    margin-bottom: -12px;
+  }

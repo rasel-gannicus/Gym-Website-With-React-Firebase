@@ -63,8 +63,8 @@ const Header = () => {
   }, []);
 
   // --- checking if user is logged in
-  // const [user, loading, error] = useAuthState(auth);
-  console.log(auth.currentUser);
+  const [user, loading, error] = useAuthState(auth);
+  console.log("user : ", user);
   // const userName = auth?.currentUser?.displayName;
   useEffect(() => {
     if (auth?.currentUser?.displayName) {
@@ -84,9 +84,12 @@ const Header = () => {
             <a href="">About</a>
             <a href="">Trainers</a>
             <a href="">Blog</a>
-            {auth?.currentUser?.accessToken ? <span>{username}</span> : <Link to="/login">Login</Link>}
-
+            {auth?.currentUser?.accessToken ? <span><a href="">Logout</a> </span> : <Link to="/login">Login</Link>}
           </div>
+          {!auth?.currentUser?.accessToken ? '' : <div className="user-name">
+          <span className=""> User : {username}</span>
+          </div>}
+          
         </div>
         <div className="menu-icon">
           <img onClick={displayMenu} className="menuOne" src={menuOne} alt="" />
