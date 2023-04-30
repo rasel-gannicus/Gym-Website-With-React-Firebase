@@ -23,3 +23,13 @@
     background: rgb(182, 177, 177) !important;
     cursor:no-drop !important;
 }
+
+
+/* --- deciding what to do for register button while loading --- */
+.loader-small{
+    padding-top: 7px;
+}
+.loading-state{
+    background: rgba(15, 128, 203, 0.616) !important;
+    cursor:no-drop !important;
+}

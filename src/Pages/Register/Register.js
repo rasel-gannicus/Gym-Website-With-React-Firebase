@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import './Register.css';
 import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../utilities/firebase.init';
+import ClipLoader from 'react-spinners/ClipLoader';
+import { toast } from 'react-toastify';
 
 
 const Register = () => {
@@ -12,7 +14,20 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    // const [user] = useAuthState(auth);
+    // --- creating a loading spinner
+    let loader = null ; 
+    const errorMsg = (dummy) => toast.error(dummy || 'error', {
+        position: "bottom-center",
+        autoClose: 15000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
+
+    // --- creating user with firebase hooks
     const [
         createUserWithEmailAndPassword,
         user,
@@ -22,7 +37,6 @@ const Register = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(name, email, password, confirmPassword);
         if (password.length < 6) {
             console.log('Password should be more than 6 character');
             return;
@@ -32,6 +46,7 @@ const Register = () => {
             return;
         }
 
+        loader = <span><ClipLoader color="white" size={20} /></span>
         createUserWithEmailAndPassword(email, password);
         return;
     }
@@ -39,9 +54,10 @@ const Register = () => {
     useEffect(() => {
         if (error) {
             console.log(error.message);
+            errorMsg(error.message);
         }
         if (loading) {
-            console.log('loading');
+            loader = <span><ClipLoader color="white" size={20} /></span>
         }
         if (!error && !loading && user) {
             console.log("User created successfully : ", user);
@@ -68,7 +84,13 @@ const Register = () => {
                             <input onChange={() => setIsAgree(!isAgree)} type="checkbox" name="" id="" value={isAgree} required />
                             <p>Agree to the terms and conditions</p>
                         </div>
-                        <button type="submit" disabled={!isAgree} className={isAgree ? "" : "disabled-button"} >Register</button>
+                        <button 
+                        type="submit" 
+                        disabled={!isAgree || loading} 
+                        className={`${isAgree ? "" : "disabled-button"} ${loading ? "loading-state" : ""}`}
+                         > 
+                         {loading && <span className="loader-small"><ClipLoader color="white" size={15} /></span> } <span>{loading ? 'Registering' : 'Register'}</span> 
+                         </button>
                     </div>
                 </form>
             </div>

@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router';
 import Error from './Pages/Error/Error';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       </Routes>
       <Footer></Footer>
 
+      <ToastContainer />
     </div>
   );
 }
