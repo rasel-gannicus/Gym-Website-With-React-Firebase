@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
 import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../utilities/firebase.init';
@@ -14,8 +14,7 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    // --- creating a loading spinner
-    let loader = null ; 
+    // --- creating a popup error message
     const errorMsg = (dummy) => toast.error(dummy || 'error', {
         position: "bottom-center",
         autoClose: 3000,
@@ -26,7 +25,20 @@ const Register = () => {
         progress: undefined,
         theme: "dark",
     });
+    // --- creating a popup success message when account will be created successfully
+    const successMsg = () => toast.success('Account Created Successfully', {
+        position: "bottom-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
 
+    // --- Navigating user to home page after successfully creating account
+    const navigate = useNavigate();
     // --- creating user with firebase hooks
     const [
         createUserWithEmailAndPassword,
@@ -46,7 +58,6 @@ const Register = () => {
             return;
         }
 
-        loader = <span><ClipLoader color="white" size={20} /></span>
         createUserWithEmailAndPassword(email, password);
         return;
     }
@@ -57,10 +68,12 @@ const Register = () => {
             errorMsg(error.message);
         }
         if (loading) {
-            loader = <span><ClipLoader color="white" size={20} /></span>
+            // loader = <span><ClipLoader color="white" size={20} /></span>
         }
         if (!error && !loading && user) {
             console.log("User created successfully : ", user);
+            successMsg();
+            navigate('/');
         }
     }, [error, loading, user])
     return (
