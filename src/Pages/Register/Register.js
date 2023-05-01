@@ -68,9 +68,6 @@ const Register = () => {
             console.log(error.message);
             errorMsg(error.message);
         }
-        if (loading) {
-            // loader = <span><ClipLoader color="white" size={20} /></span>
-        }
         if (!error && !loading && user) {
             console.log("User created successfully : ", user);
             successMsg();
