@@ -103,6 +103,18 @@ const Header = () => {
     }
   }, [isActive]);
 
+  // --- mobile menu toggler 
+  const navbarRight = document.querySelector('.header-right');
+  const mobileMenuIcon = document.querySelector('.menuOne');
+  function handleMobileClick(event){
+    if(!event.target.classList.contains('menuOne') && !event.target.classList.contains('header-right')){
+      console.log('ok') ; 
+      hideMenu();
+    }
+  }
+
+  document.addEventListener('click', handleMobileClick)
+
   const profilePopup = <span className="profile-pop">
     <p>{username}</p>
     <p className="logout" >Logout</p>
