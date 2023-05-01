@@ -78,6 +78,7 @@ const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const profilePopupAnchor = document.querySelector('.profile-pop-anchor');
   const profilePopupMini = document.querySelector('.profile-pop p');
+  const profilePopuplogout = document.querySelector('.logout');
   const toggleProfile = (e) => {
     e.preventDefault();
     setIsActive(!isActive);
@@ -87,7 +88,7 @@ const Header = () => {
   useEffect(() => {
     const handleDocumentClick = (event) => {
       // console.log('ok');
-      if(event.target != profilePopupAnchor && event.target != profilePopupMini){
+      if(event.target !== profilePopupAnchor && event.target !== profilePopupMini && event.target !== profilePopuplogout){
         setIsActive(false);
       }
     }  
@@ -104,7 +105,7 @@ const Header = () => {
 
   const profilePopup = <span className="profile-pop">
     <p>{username}</p>
-    <p>Logout</p>
+    <p className="logout" >Logout</p>
   </span>
 
   return (
