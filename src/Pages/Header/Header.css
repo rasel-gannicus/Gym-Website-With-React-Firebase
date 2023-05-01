@@ -92,12 +92,15 @@
 }
 .caret-down, .caret-right{
   pointer-events: none;
+  transition: all 0.3s;
 }
 .profile-pop-main.active .caret-right{
-  display: none;
+  /* display: none; */
+  transform: rotate(90deg);
+  margin-top: 5px;
 }
 .profile-pop-main.active .caret-down{
-  display: block;
+  /* display: block; */
 }
 
 .profile-pop-main.active .profile-pop{
@@ -251,5 +254,9 @@ For mobile:
   }
   
 
+  .logout{
+    color: red;
+    font-weight: 600;
+  }
 
   
