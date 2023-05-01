@@ -5,24 +5,27 @@ import ClipLoader from 'react-spinners/ClipLoader';
 import { toast } from 'react-toastify';
 import auth from '../../utilities/firebase.init';
 import './Login.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF , faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
+
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-        // --- creating a popup success message when user will be loggedIn successfully
-        const successMsg = () => toast.success('Logged In successfully', {
-            position: "bottom-center",
-            autoClose: 3000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-        });
+    // --- creating a popup success message when user will be loggedIn successfully
+    const successMsg = () => toast.success('Logged In successfully', {
+        position: "bottom-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
 
-        // --- creating a popup error message
+    // --- creating a popup error message
     const errorMsg = (dummy) => toast.error(dummy || 'error', {
         position: "bottom-center",
         autoClose: 3000,
@@ -40,7 +43,7 @@ const Login = () => {
         user,
         loading,
         error,
-      ] = useSignInWithEmailAndPassword(auth);
+    ] = useSignInWithEmailAndPassword(auth);
     const handleLogin = (e) => {
         e.preventDefault();
         // console.log('ok');
@@ -58,7 +61,7 @@ const Login = () => {
             console.log("LoggedIn successfully : ", user);
             successMsg();
             navigate('/');
-            
+
         }
     }, [error, loading, user])
     return (
@@ -73,19 +76,33 @@ const Login = () => {
                     <div className="">
                         <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" name="" placeholder="Your Password" id="" required />
 
-                        <button 
-                        type="submit" 
-                        disabled={loading} 
-                        className={` ${loading ? "loading-state" : ""}`}
-                         > 
-                         {loading && <span className="loader-small"><ClipLoader color="white" size={15} /></span> } <span>{loading ? 'Logging In' : 'Login'}</span> 
-                         </button>
+                        <button
+                            type="submit"
+                            disabled={loading}
+                            className={` ${loading ? "loading-state" : ""}`}
+                        >
+                            {loading && <span className="loader-small"><ClipLoader color="white" size={15} /></span>} <span>{loading ? 'Logging In' : 'Login'}</span>
+                        </button>
                     </div>
                 </form>
             </div>
             <div className="forgot-link">
                 <span><a href="">Forgot Password / &nbsp; </a></span>
                 <span><Link to="/register"> Register</Link></span>
+            </div>
+            <div className="social-login">
+                <p>Or Sign in using </p>
+                <div className="social-icons-div">
+                    <div className="social-login-icons">
+                        <FontAwesomeIcon icon={faGoogle} />
+                    </div>
+                    <div className="social-login-icons">
+                        <FontAwesomeIcon icon={faFacebookF} />
+                    </div>
+                    <div className="social-login-icons">
+                        <FontAwesomeIcon icon={faGithub} />
+                    </div>
+                </div>
             </div>
         </div>
     );
