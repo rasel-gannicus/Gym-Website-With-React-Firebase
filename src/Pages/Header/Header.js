@@ -108,7 +108,7 @@ const Header = () => {
             <a href="">Trainers</a>
             <a href="">Blog</a>
             {auth?.currentUser?.accessToken ? <span className={`profile-pop-main ${isActive ? 'active' : ''}`}>
-              <a onClick={toggleProfile} href="">Profile 
+              <a onClick={toggleProfile} className="profile-pop-anchor">Profile 
               <span className="caret-right"><FontAwesomeIcon icon={faCaretRight} /></span> 
               <span className="caret-down"><FontAwesomeIcon icon={faCaretDown} /></span> 
               </a> 
