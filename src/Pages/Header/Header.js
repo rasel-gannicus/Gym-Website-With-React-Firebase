@@ -26,9 +26,9 @@ const Header = () => {
     const menuOne = document.querySelector('.menuOne');
     const menuTwo = document.querySelector('.menuTwo');
     const headerMenu = document.querySelector('.header-right');
-    headerMenu.classList.remove('active');
-    menuOne.classList.remove('active');
-    menuTwo.classList.remove('active');
+    headerMenu?.classList.remove('active');
+    menuOne?.classList.remove('active');
+    menuTwo?.classList.remove('active');
   }
 
 

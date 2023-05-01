@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { toast } from 'react-toastify';
 import auth from '../../utilities/firebase.init';
 import './Login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF , faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF, faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 
 const Login = () => {
@@ -63,7 +63,35 @@ const Login = () => {
             navigate('/');
 
         }
-    }, [error, loading, user])
+    }, [error, loading, user]);
+
+
+    // --- sign in with social accounts
+    const [signInWithFacebook, ] = useSignInWithFacebook(auth);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+
+    const handleFacebookLogin = () => {
+
+    }
+    const handleGoogleLogin = () => {
+        signInWithGoogle();
+    }
+
+    if (googleLoading) {
+        console.log('loading');
+    }
+    if (googleUser) {
+        navigate('/');
+    }
+    // useEffect(() => {
+    //     if (googleLoading && !googleError) {
+    //         console.log('loading');
+    //     }
+    //     if (!googleLoading && !googleError && googleUser) {
+    //         navigate('/');
+    //     }
+    // }, [googleUser, googleLoading])
+
     return (
         <div className="login-div">
             <h2>Login</h2>
@@ -93,7 +121,7 @@ const Login = () => {
             <div className="social-login">
                 <p>Or Sign in using </p>
                 <div className="social-icons-div">
-                    <div className="social-login-icons">
+                    <div onClick={handleGoogleLogin} className="social-login-icons">
                         <FontAwesomeIcon icon={faGoogle} />
                     </div>
                     <div className="social-login-icons">
