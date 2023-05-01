@@ -18,8 +18,11 @@
     margin: 5px 50px;
     z-index: 99999;
 }
+
 .header-right-menu{
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .header-nav.sticky{
   position: fixed;
@@ -63,7 +66,7 @@
   text-align: right !important;
   color: tomato ;
   margin-right: 15px;
-  margin-bottom: -12px;
+  /* margin-bottom: -12px; */
 }
 
 
@@ -73,6 +76,8 @@
 }
 .profile-pop-anchor{
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .caret-right, .caret-down{
   margin-left: 7px;
