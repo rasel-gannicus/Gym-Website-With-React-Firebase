@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Banner from './Banner/Banner';
 import './Header.css';
 import menuTwo from '../../assets/img/menu.png';
@@ -67,8 +67,7 @@ const Header = () => {
 
   // --- checking if user is logged in
   const [user, loading, error] = useAuthState(auth);
-  // console.log("user : ", user);
-  // const userName = auth?.currentUser?.displayName;
+  
   useEffect(() => {
     if (auth?.currentUser?.displayName) {
       setUsername(auth?.currentUser?.displayName);
@@ -77,24 +76,37 @@ const Header = () => {
 
   // --- creating a toggle popup for profile clicking on header
   const [isActive, setIsActive] = useState(false);
-  const profilePopupMain = document.querySelector('.profile-pop-main');
+  const profilePopupAnchor = document.querySelector('.profile-pop-anchor');
+  const profilePopupMini = document.querySelector('.profile-pop p');
   const toggleProfile = (e) => {
     e.preventDefault();
     setIsActive(!isActive);
-    // if(isActive){
-    //   profilePopup.classList.add('active');
-
-    // }else{
-    //   profilePopup.classList.remove('active');
-    // }
   }
-  useEffect(()=>{
-    
-  },[isActive])
+
+  // --- creating functionality for closing popup profile menu while clicking on any part of the webpage
+  useEffect(() => {
+    const handleDocumentClick = (event) => {
+      // console.log('ok');
+      if(event.target != profilePopupAnchor && event.target != profilePopupMini){
+        setIsActive(false);
+      }
+    }  
+    if (isActive) {
+      document.addEventListener("click", handleDocumentClick);
+    } else {
+      document.removeEventListener("click", handleDocumentClick);
+    }
+  
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+    }
+  }, [isActive]);
+
   const profilePopup = <span className="profile-pop">
     <p>{username}</p>
     <p>Logout</p>
   </span>
+
   return (
     <div className="full-header">
       <div className={!isSticky ? 'header-nav' : 'header-nav sticky'}>
@@ -108,17 +120,17 @@ const Header = () => {
             <a href="">Trainers</a>
             <a href="">Blog</a>
             {auth?.currentUser?.accessToken ? <span draggable className={`profile-pop-main ${isActive ? 'active' : ''}`}>
-              <a onClick={toggleProfile} className="profile-pop-anchor">Profile 
-              <span className="caret-right"><FontAwesomeIcon icon={faCaretRight} /></span> 
-              <span className="caret-down"><FontAwesomeIcon icon={faCaretDown} /></span> 
-              </a> 
-              {profilePopup} 
-              </span> : <Link to="/login">Login</Link>}
+              <a onClick={toggleProfile} className="profile-pop-anchor">Profile
+              <span className="caret-right"><FontAwesomeIcon icon={faCaretRight} /></span>
+                <span className="caret-down"><FontAwesomeIcon icon={faCaretDown} /></span>
+              </a>
+              {profilePopup}
+            </span> : <Link to="/login">Login</Link>}
           </div>
           {!auth?.currentUser?.accessToken ? '' : <div className="user-name">
-          {/* <span className=""> User : {username}</span> */}
+            {/* <span className=""> User : {username}</span> */}
           </div>}
-          
+
         </div>
         <div className="menu-icon">
           <img onClick={displayMenu} className="menuOne" src={menuOne} alt="" />

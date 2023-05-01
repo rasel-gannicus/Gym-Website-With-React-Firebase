@@ -90,6 +90,9 @@
 .caret-down{
   display: none;
 }
+.caret-down, .caret-right{
+  pointer-events: none;
+}
 .profile-pop-main.active .caret-right{
   display: none;
 }
@@ -115,7 +118,7 @@
   scale: 0;
   padding: 0 25px;
   text-align: right;
-  transition: all 0.3s;
+  transition: all 0.2s;
   transform-origin: top right;
 }
 .profile-pop p{
