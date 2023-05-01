@@ -183,3 +183,53 @@ For mobile:
     margin-right: 15px;
     margin-bottom: -12px;
   }
+
+
+  .profile-pop-main{
+    position: relative;
+  }
+  .caret-down{
+    display: none;
+  }
+  .caret-right, .caret-down{
+    margin-left: 5px;
+    /* padding: 0 3px; */
+  }
+  .profile-pop-main.active .caret-right{
+    display: none;
+  }
+  .profile-pop-main.active .caret-down{
+    display: inline-block;
+  }
+  
+  .profile-pop-main.active .profile-pop{
+    scale: 1;
+    top: 30px;
+  }
+  .profile-pop{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background: white;
+    color: black;
+    position: absolute;
+    /* left: 0; */
+    right: 15px;
+    top:  30px;
+    scale: 0;
+    padding: 0 25px;
+    text-align: right;
+    transition: all 0.3s;
+    transform-origin: top right;
+  }
+  .profile-pop p{
+    width: 100%;
+    padding: 0 50px;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+
+  .profile-pop p:last-child:hover{
+    color: blue;
+  }
