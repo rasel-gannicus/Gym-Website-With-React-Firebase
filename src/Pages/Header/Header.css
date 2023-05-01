@@ -232,6 +232,11 @@ For mobile:
     margin: 0 7px;
     color: white;
 }
+.profile-pop-main.active .caret-right{
+  /* display: none; */
+  transform: rotate(90deg);
+  margin-top: 5px;
+}
   }
   
   /*-----------------------------------------
@@ -250,6 +255,11 @@ For mobile:
     font-weight: 500;
     margin: 0 7px;
     color: white;
+}
+.profile-pop-main.active .caret-right{
+  /* display: none; */
+  transform: rotate(90deg);
+  margin-top: 5px;
 }
   }
   

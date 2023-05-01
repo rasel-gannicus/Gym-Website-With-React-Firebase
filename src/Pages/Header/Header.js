@@ -4,7 +4,7 @@ import './Header.css';
 import menuTwo from '../../assets/img/menu.png';
 import menuOne from '../../assets/img/menu (1).png';
 import { Link } from 'react-router-dom';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignOut } from 'react-firebase-hooks/auth';
 import auth from '../../utilities/firebase.init';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretRight, faCaretSquareDown } from '@fortawesome/free-solid-svg-icons';
@@ -107,17 +107,22 @@ const Header = () => {
   const navbarRight = document.querySelector('.header-right');
   const mobileMenuIcon = document.querySelector('.menuOne');
   function handleMobileClick(event){
-    if(!event.target.classList.contains('menuOne') && !event.target.classList.contains('header-right')){
+    if(!event.target.classList.contains('menuOne') && !event.target.classList.contains('header-right')  && !event.target.classList.contains('profile-pop-anchor')){
       console.log('ok') ; 
       hideMenu();
     }
   }
+  document.addEventListener('click', handleMobileClick);
 
-  document.addEventListener('click', handleMobileClick)
+  // --- logging out 
+  const [signOut, signOutLoading : loading, signoutError : error] = useSignOut(auth);
+  const handleLogout = () => {
+    signOut();
+  }
 
   const profilePopup = <span className="profile-pop">
     <p>{username}</p>
-    <p className="logout" >Logout</p>
+    <p draggable onClick={handleLogout} className="logout" >Logout</p>
   </span>
 
   return (
