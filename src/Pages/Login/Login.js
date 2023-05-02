@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { toast } from 'react-toastify';
 import auth from '../../utilities/firebase.init';
@@ -52,15 +52,17 @@ const Login = () => {
     }
     // --- Navigating user to home page after successfully creating account
     const navigate = useNavigate();
+    const location = useLocation(); 
+    const from = location?.state?.from?.pathname || '/';
+    
     useEffect(() => {
         if (error) {
             console.log(error.message);
             errorMsg(error.message);
         }
-        if (!error && !loading && user) {
-            console.log("LoggedIn successfully : ", user);
+        if (!error && !loading && user || googleUser || facebookUser || githubUser) {
             successMsg();
-            navigate('/');
+            navigate(from, {replace : true});
 
         }
     }, [error, loading, user]);
@@ -83,10 +85,11 @@ const Login = () => {
 
 
     if (googleLoading) {
-        console.log('loading');
     }
-    if (googleUser) {
-        navigate('/');
+    if (user || googleUser || facebookUser || githubUser) {
+        successMsg();
+        navigate(from, {replace : true});
+
     }
 
 

@@ -72,7 +72,6 @@ const Navbar = () => {
   useEffect(() => {
     if (auth?.currentUser?.displayName) {
       setUsername(auth?.currentUser?.displayName);
-      console.log(auth.currentUser.photoURL);
       // setPhoto(auth.currentUser.photoURL);
     }
   }, [auth, auth?.currentUser?.displayName])
@@ -138,7 +137,7 @@ const Navbar = () => {
         <div className="header-right-menu">
           <Link to="/">Home</Link>
           <Link to="">About</Link>
-          <Link to="">Trainers</Link>
+          <Link to="/userService">Secret Page</Link>
           <Link to="/services">Services</Link>
           {auth?.currentUser?.accessToken ? <span draggable className={`profile-pop-main ${isActive ? 'active' : ''}`}>
             <a onClick={toggleProfile} className="profile-pop-anchor">Profile
