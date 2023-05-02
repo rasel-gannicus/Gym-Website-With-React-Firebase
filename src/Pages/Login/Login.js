@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { toast } from 'react-toastify';
@@ -69,13 +69,18 @@ const Login = () => {
     // --- sign in with social accounts
     const [signInWithFacebook, ] = useSignInWithFacebook(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    const [signInWithGithub] = useSignInWithGithub(auth);
 
     const handleFacebookLogin = () => {
-
+        signInWithFacebook();
     }
     const handleGoogleLogin = () => {
         signInWithGoogle();
     }
+    const handleGithubLogin = () => {
+        signInWithGithub();
+    }
+
 
     if (googleLoading) {
         console.log('loading');
@@ -83,14 +88,7 @@ const Login = () => {
     if (googleUser) {
         navigate('/');
     }
-    // useEffect(() => {
-    //     if (googleLoading && !googleError) {
-    //         console.log('loading');
-    //     }
-    //     if (!googleLoading && !googleError && googleUser) {
-    //         navigate('/');
-    //     }
-    // }, [googleUser, googleLoading])
+
 
     return (
         <div className="login-div">
@@ -124,10 +122,10 @@ const Login = () => {
                     <div onClick={handleGoogleLogin} className="social-login-icons">
                         <FontAwesomeIcon icon={faGoogle} />
                     </div>
-                    <div className="social-login-icons">
+                    <div onClick={handleFacebookLogin} className="social-login-icons">
                         <FontAwesomeIcon icon={faFacebookF} />
                     </div>
-                    <div className="social-login-icons">
+                    <div onClick={handleGithubLogin} className="social-login-icons">
                         <FontAwesomeIcon icon={faGithub} />
                     </div>
                 </div>
