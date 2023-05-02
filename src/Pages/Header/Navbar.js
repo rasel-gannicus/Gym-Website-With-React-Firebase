@@ -102,8 +102,7 @@ const Navbar = () => {
   const navbarRight = document.querySelector('.header-right');
   const mobileMenuIcon = document.querySelector('.menuOne');
   function handleMobileClick(event){
-    if(!event.target.classList.contains('menuOne') && !event.target.classList.contains('header-right')  && !event.target.classList.contains('profile-pop-anchor')){
-      console.log('ok') ; 
+    if(!event.target.classList.contains('menuOne') && !event.target.classList.contains('header-right')  && !event.target.classList.contains('profile-pop-anchor')){ 
       hideMenu();
     }
   }
