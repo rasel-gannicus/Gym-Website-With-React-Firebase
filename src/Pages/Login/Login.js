@@ -67,9 +67,9 @@ const Login = () => {
 
 
     // --- sign in with social accounts
-    const [signInWithFacebook, ] = useSignInWithFacebook(auth);
+    const [signInWithFacebook, facebookUser ] = useSignInWithFacebook(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
-    const [signInWithGithub] = useSignInWithGithub(auth);
+    const [signInWithGithub, githubUser] = useSignInWithGithub(auth);
 
     const handleFacebookLogin = () => {
         signInWithFacebook();
