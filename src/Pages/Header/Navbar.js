@@ -4,10 +4,13 @@ import { Link } from 'react-router-dom';
 import auth from '../../utilities/firebase.init';
 import menuTwo from '../../assets/img/menu.png';
 import menuOne from '../../assets/img/menu (1).png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretDown, faCaretRight, faCaretSquareDown } from '@fortawesome/free-solid-svg-icons';
+import './Navbar.css';
 
 const Navbar = () => {
-    const [isSticky, setIsSticky] = useState(false);
-  const [username, setUsername] = useState('')
+  const [isSticky, setIsSticky] = useState(false);
+  const [username, setUsername] = useState('');
 
   const displayMenu = () => {
     const menuOne = document.querySelector('.menuOne');
@@ -62,7 +65,7 @@ const Navbar = () => {
 
   // --- checking if user is logged in
   const [user, loading, error] = useAuthState(auth);
-  
+
   useEffect(() => {
     if (auth?.currentUser?.displayName) {
       setUsername(auth?.currentUser?.displayName);
@@ -83,16 +86,16 @@ const Navbar = () => {
   useEffect(() => {
     const handleDocumentClick = (event) => {
       // console.log('ok');
-      if(event.target !== profilePopupAnchor && event.target !== profilePopupMini && event.target !== profilePopuplogout){
+      if (event.target !== profilePopupAnchor && event.target !== profilePopupMini && event.target !== profilePopuplogout) {
         setIsActive(false);
       }
-    }  
+    }
     if (isActive) {
       document.addEventListener("click", handleDocumentClick);
     } else {
       document.removeEventListener("click", handleDocumentClick);
     }
-  
+
     return () => {
       document.removeEventListener("click", handleDocumentClick);
     }
@@ -101,54 +104,55 @@ const Navbar = () => {
   // --- mobile menu toggler 
   const navbarRight = document.querySelector('.header-right');
   const mobileMenuIcon = document.querySelector('.menuOne');
-  function handleMobileClick(event){
-    if(!event.target.classList.contains('menuOne') && !event.target.classList.contains('header-right')  && !event.target.classList.contains('profile-pop-anchor')){ 
+  function handleMobileClick(event) {
+    if (!event.target.classList.contains('menuOne') && !event.target.classList.contains('header-right') && !event.target.classList.contains('profile-pop-anchor')) {
       hideMenu();
     }
   }
   document.addEventListener('click', handleMobileClick);
 
   // --- logging out 
-  const [signOut, signOutLoading , signoutError ] = useSignOut(auth);
+  const [signOut, signOutLoading, signoutError] = useSignOut(auth);
   const handleLogout = () => {
     signOut();
   }
 
   const profilePopup = <span className="profile-pop">
     <p>{username}</p>
+    <Link to='userService'>Your Service</Link>
     <p draggable onClick={handleLogout} className="logout" >Logout</p>
   </span>
 
-    return (
-        <div className={!isSticky ? 'header-nav' : 'header-nav sticky'}>
-            <div className="header-left">
-                <h1>Fitness</h1>
-            </div>
-            <div className="header-right">
-                <div className="header-right-menu">
-                    <Link to="/">Home</Link>
-                    <Link to="">About</Link>
-                    <Link to="">Trainers</Link>
-                    <Link to="">Blog</Link>
-                    {auth?.currentUser?.accessToken ? <span draggable className={`profile-pop-main ${isActive ? 'active' : ''}`}>
-                        <a onClick={toggleProfile} className="profile-pop-anchor">Profile
+  return (
+    <div className={!isSticky ? 'header-nav' : 'header-nav sticky'}>
+      <div className="header-left">
+        <h1>Fitness</h1>
+      </div>
+      <div className="header-right">
+        <div className="header-right-menu">
+          <Link to="/">Home</Link>
+          <Link to="">About</Link>
+          <Link to="">Trainers</Link>
+          <Link to="/services">Services</Link>
+          {auth?.currentUser?.accessToken ? <span draggable className={`profile-pop-main ${isActive ? 'active' : ''}`}>
+            <a onClick={toggleProfile} className="profile-pop-anchor">Profile
               <span className="caret-right"><FontAwesomeIcon icon={faCaretRight} /></span>
-                            <span className="caret-down"><FontAwesomeIcon icon={faCaretDown} /></span>
-                        </a>
-                        {profilePopup}
-                    </span> : <Link to="/login">Login</Link>}
-                </div>
-                {!auth?.currentUser?.accessToken ? '' : <div className="user-name">
-                    {/* <span className=""> User : {username}</span> */}
-                </div>}
-
-            </div>
-            <div className="menu-icon">
-                <img onClick={displayMenu} className="menuOne" src={menuOne} alt="" />
-                <img onClick={hideMenu} className="menuTwo" src={menuTwo} alt="" />
-            </div>
+              <span className="caret-down"><FontAwesomeIcon icon={faCaretDown} /></span>
+            </a>
+            {profilePopup}
+          </span> : <Link to="/login">Login</Link>}
         </div>
-    );
+        {!auth?.currentUser?.accessToken ? '' : <div className="user-name">
+          {/* <span className=""> User : {username}</span> */}
+        </div>}
+
+      </div>
+      <div className="menu-icon">
+        <img onClick={displayMenu} className="menuOne" src={menuOne} alt="" />
+        <img onClick={hideMenu} className="menuTwo" src={menuTwo} alt="" />
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;

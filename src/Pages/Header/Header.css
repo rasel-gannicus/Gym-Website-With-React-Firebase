@@ -123,6 +123,8 @@
   text-align: right;
   transition: all 0.2s;
   transform-origin: top right;
+  min-width: 200px;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.5);
 }
 .profile-pop p{
   width: 100%;
