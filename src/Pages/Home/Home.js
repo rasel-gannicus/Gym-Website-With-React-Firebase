@@ -8,6 +8,7 @@ import Trainers from '../Trainers/Trainers';
 const Home = () => {
     return (
         <div>
+            <Header></Header>
             <Features></Features>
             <About></About>
             <Trainers></Trainers>

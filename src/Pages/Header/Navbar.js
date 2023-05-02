@@ -37,7 +37,7 @@ const Navbar = () => {
     const banner = document.querySelector('.banner-details h1');
 
     if (window.innerWidth > 481) {
-      if (window.scrollY > banner.offsetHeight) {
+      if (window.scrollY > banner?.offsetHeight) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
@@ -127,10 +127,10 @@ const Navbar = () => {
             </div>
             <div className="header-right">
                 <div className="header-right-menu">
-                    <a href="">Home</a>
-                    <a href="">About</a>
-                    <a href="">Trainers</a>
-                    <a href="">Blog</a>
+                    <Link to="/">Home</Link>
+                    <Link to="">About</Link>
+                    <Link to="">Trainers</Link>
+                    <Link to="">Blog</Link>
                     {auth?.currentUser?.accessToken ? <span draggable className={`profile-pop-main ${isActive ? 'active' : ''}`}>
                         <a onClick={toggleProfile} className="profile-pop-anchor">Profile
               <span className="caret-right"><FontAwesomeIcon icon={faCaretRight} /></span>
