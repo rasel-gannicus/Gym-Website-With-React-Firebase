@@ -42,16 +42,24 @@
 
 /* common css */
 
-.feature-title hr, .login-div hr {
+.feature-title hr, .login-div hr  {
   border: none;
   border-top: 3px solid red;
   margin-bottom: 50px;
   width: 100%;
 }
 
-.login-div hr {
+.login-div hr  {
   border: none;
   border-top: 3px solid red;
   margin-bottom: 50px;
   width: 50%;
+}
+
+.profile-pop hr{
+  border: none;
+  border-bottom: 1px solid #7F7F7F;
+  /* margin-bottom: 50px; */
+  width: 100%;
+  margin-top: 0px;
 }

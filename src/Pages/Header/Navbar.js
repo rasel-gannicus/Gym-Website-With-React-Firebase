@@ -5,12 +5,14 @@ import auth from '../../utilities/firebase.init';
 import menuTwo from '../../assets/img/menu.png';
 import menuOne from '../../assets/img/menu (1).png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faCaretRight, faCaretSquareDown } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faCaretRight, faCaretSquareDown , faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css';
+import userPic from '../../assets/img/user (3).png';
 
 const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [username, setUsername] = useState('');
+  const [photo, setPhoto] = useState(userPic);
 
   const displayMenu = () => {
     const menuOne = document.querySelector('.menuOne');
@@ -66,9 +68,12 @@ const Navbar = () => {
   // --- checking if user is logged in
   const [user, loading, error] = useAuthState(auth);
 
+  // let photo = '';
   useEffect(() => {
     if (auth?.currentUser?.displayName) {
       setUsername(auth?.currentUser?.displayName);
+      console.log(auth.currentUser.photoURL);
+      // setPhoto(auth.currentUser.photoURL);
     }
   }, [auth, auth?.currentUser?.displayName])
 
@@ -118,7 +123,8 @@ const Navbar = () => {
   }
 
   const profilePopup = <span className="profile-pop">
-    <p>{username}</p>
+    <p>{username} <span><img src={photo} alt=""/></span></p>
+    <hr />
     <Link to='userService'>Your Service</Link>
     <p draggable onClick={handleLogout} className="logout" >Logout</p>
   </span>

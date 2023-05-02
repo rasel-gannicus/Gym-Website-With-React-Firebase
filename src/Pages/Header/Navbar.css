@@ -6,3 +6,19 @@
     font-size: unset;
     width: 100%;
 }
+
+.profile-pop img{
+    width: 25px;
+}
+.profile-pop p{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+.profile-pop p span{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
