@@ -1,9 +1,11 @@
 import React from 'react';
+import ServiceDetailCard from './ServiceDetailCard';
 
 const ServiceDetails = () => {
     return (
-        <div>
+        <div className="service-card-details">
             <h2>Service Details here</h2>
+            <ServiceDetailCard></ServiceDetailCard>
         </div>
     );
 };
