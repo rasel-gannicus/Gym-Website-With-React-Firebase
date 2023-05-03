@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Register.css';
-import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../utilities/firebase.init';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { toast } from 'react-toastify';
 import { updateProfile } from '@firebase/auth';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 
 const Register = () => {
@@ -81,7 +83,32 @@ const Register = () => {
                 console.log(errors)
               })
         }
-    }, [error, loading, user])
+    }, [error, loading, user]);
+
+    
+    // --- sign in with social accounts
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || '/';
+
+    const [signInWithFacebook, facebookUser ] = useSignInWithFacebook(auth);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    const [signInWithGithub, githubUser] = useSignInWithGithub(auth);
+
+    const handleFacebookLogin = () => {
+        signInWithFacebook();
+    }
+    const handleGoogleLogin = () => {
+        signInWithGoogle();
+    }
+    const handleGithubLogin = () => {
+        signInWithGithub();
+    }
+    
+    if (user || googleUser || facebookUser || githubUser) {
+        successMsg();
+        navigate(from, {replace : true});
+
+    }
     return (
         <div className="login-div">
             <h2>Register</h2>
@@ -116,6 +143,21 @@ const Register = () => {
             <div className="forgot-link">
                 <span><a href="">Forgot Password / &nbsp; </a></span>
                 <span><Link to="/register"> Register</Link></span>
+            </div>
+            {/* === social login === */}
+            <div className="social-login">
+                <p>Or Sign in using </p>
+                <div className="social-icons-div">
+                    <div onClick={handleGoogleLogin} className="social-login-icons">
+                        <FontAwesomeIcon icon={faGoogle} />
+                    </div>
+                    <div onClick={handleFacebookLogin} className="social-login-icons">
+                        <FontAwesomeIcon icon={faFacebookF} />
+                    </div>
+                    <div onClick={handleGithubLogin} className="social-login-icons">
+                        <FontAwesomeIcon icon={faGithub} />
+                    </div>
+                </div>
             </div>
         </div>
     );

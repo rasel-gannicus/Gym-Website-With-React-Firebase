@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAuthState, useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { toast } from 'react-toastify';
 import auth from '../../utilities/firebase.init';
@@ -12,6 +12,9 @@ import { faFacebookF, faGoogle, faGithub } from "@fortawesome/free-brands-svg-ic
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    
+    const [LoggedUser, firstloading] = useAuthState(auth);
+    console.log(LoggedUser);
 
     // --- creating a popup success message when user will be loggedIn successfully
     const successMsg = () => toast.success('Logged In successfully', {
@@ -52,24 +55,26 @@ const Login = () => {
     }
     // --- Navigating user to home page after successfully creating account
     const navigate = useNavigate();
-    const location = useLocation(); 
+    const location = useLocation();
     const from = location?.state?.from?.pathname || '/';
-    
+
     useEffect(() => {
         if (error) {
             console.log(error.message);
             errorMsg(error.message);
         }
-        if (!error && !loading && user || googleUser || facebookUser || githubUser) {
+        if (!error && !loading && user ) {
             successMsg();
-            navigate(from, {replace : true});
+            console.log('from useeffect');
+            navigate(from, { replace: true });
+            navigate('/');
 
         }
     }, [error, loading, user]);
 
 
     // --- sign in with social accounts
-    const [signInWithFacebook, facebookUser ] = useSignInWithFacebook(auth);
+    const [signInWithFacebook, facebookUser] = useSignInWithFacebook(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [signInWithGithub, githubUser] = useSignInWithGithub(auth);
 
@@ -83,15 +88,20 @@ const Login = () => {
         signInWithGithub();
     }
 
-
-    if (googleLoading) {
-    }
-    if (user || googleUser || facebookUser || githubUser) {
+    if (googleUser || facebookUser || githubUser) {
         successMsg();
-        navigate(from, {replace : true});
-
+        console.log('from outside of useEffect');
+        navigate(from, { replace: true });
+        navigate('/');
     }
-
+    
+    let content = null ;
+    if(firstloading){
+        return content = <div><h2>Checking Authentication</h2></div>;
+    }
+    if(LoggedUser){
+        return <Navigate to='/'></Navigate>
+    }else{
 
     return (
         <div className="login-div">
@@ -119,6 +129,7 @@ const Login = () => {
                 <span><a href="">Forgot Password / &nbsp; </a></span>
                 <span><Link to="/register"> Register</Link></span>
             </div>
+            {/* === social login === */}
             <div className="social-login">
                 <p>Or Sign in using </p>
                 <div className="social-icons-div">
@@ -134,7 +145,8 @@ const Login = () => {
                 </div>
             </div>
         </div>
-    );
-};
+    )};
+}
+;
 
 export default Login;
