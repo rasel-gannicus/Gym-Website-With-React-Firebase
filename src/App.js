@@ -12,6 +12,7 @@ import Header from './Pages/Header/Header';
 import Navbar from './Pages/Header/Navbar';
 import UserService from './Pages/UserService/UserService';
 import RequireAuth from './Pages/RequireAuth/RequireAuth';
+import ServiceDetails from './Pages/Services/ServiceDetails/ServiceDetails';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<Home></Home>} ></Route>
         <Route path="/login" element={<Login></Login>} ></Route>
         <Route path="/register" element={<Register></Register>} ></Route>
+        <Route path="/serviceDetails" element={<ServiceDetails></ServiceDetails>} ></Route>
         <Route path="/userService" element={<RequireAuth><UserService></UserService></RequireAuth>} ></Route>
         <Route path="*" element={<Error></Error>} ></Route>
       </Routes>
