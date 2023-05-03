@@ -12,9 +12,6 @@ import { faFacebookF, faGoogle, faGithub } from "@fortawesome/free-brands-svg-ic
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    
-    const [LoggedUser, firstloading] = useAuthState(auth);
-    console.log(LoggedUser);
 
     // --- creating a popup success message when user will be loggedIn successfully
     const successMsg = () => toast.success('Logged In successfully', {
@@ -67,7 +64,7 @@ const Login = () => {
             successMsg();
             console.log('from useeffect');
             navigate(from, { replace: true });
-            navigate('/');
+            // navigate('/');
 
         }
     }, [error, loading, user]);
@@ -92,15 +89,19 @@ const Login = () => {
         successMsg();
         console.log('from outside of useEffect');
         navigate(from, { replace: true });
-        navigate('/');
+        // navigate('/');
     }
     
+    // --- checking if user is logged in initially 
+    const [LoggedUser, firstloading] = useAuthState(auth);
+
     let content = null ;
     if(firstloading){
-        return content = <div><h2>Checking Authentication</h2></div>;
+        return content = <div><h2>Checking Authentication...</h2></div>;
     }
     if(LoggedUser){
-        return <Navigate to='/'></Navigate>
+        console.log('triggered');
+        return navigate(from, { replace: true });
     }else{
 
     return (

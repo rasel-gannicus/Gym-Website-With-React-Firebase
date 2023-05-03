@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import './Register.css';
 import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../utilities/firebase.init';
@@ -109,6 +109,15 @@ const Register = () => {
         navigate(from, {replace : true});
 
     }
+
+    const [LoggedUser, firstloading] = useAuthState(auth);
+    let content = null ;
+    if(firstloading){
+        return content = <div><h2>Checking Authentication</h2></div>;
+    }
+    if(LoggedUser){
+        return <Navigate to='/'></Navigate>
+    }else{
     return (
         <div className="login-div">
             <h2>Register</h2>
@@ -140,10 +149,7 @@ const Register = () => {
                     </div>
                 </form>
             </div>
-            <div className="forgot-link">
-                <span><a href="">Forgot Password / &nbsp; </a></span>
-                <span><Link to="/register"> Register</Link></span>
-            </div>
+
             {/* === social login === */}
             <div className="social-login">
                 <p>Or Sign in using </p>
@@ -160,7 +166,7 @@ const Register = () => {
                 </div>
             </div>
         </div>
-    );
+    )};
 };
 
 export default Register;
