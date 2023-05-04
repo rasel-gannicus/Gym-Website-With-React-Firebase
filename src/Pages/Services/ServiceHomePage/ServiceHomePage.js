@@ -1,24 +1,33 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 
-const ServiceHomePage = () => {
+const ServiceHomePage = ({data}) => {
+    
+    const {serviceId,plan,serviceName,short_desc,img,basic_plan} = data ;
+    
+    // --- navigating to individual service detail page when user will click see more button
+    const navigate = useNavigate();
+    const servicePage= () => {
+        navigate('/serviceDetails');
+    }
     return (
         <div>
             <div className="service-card">
                     <div className="service-img">
-                        <img src={service5} alt="" />
+                        <img src={img} alt="" />
                         <div className="special-icons">
-                            <p>$ 150</p>
-                            <p>3 Months</p>
-                            <p>7 hrs/week</p>
+                            <p>$ {basic_plan.price}</p>
+                            <p>{basic_plan.duration} Months</p>
+                            <p>{basic_plan.hrsPerWeek} hrs/week</p>
                         </div>
                     </div>
                     <div className="card-details">
-                        <h2>Fitness For Beginners</h2>
-                        <p>Make a list of your achievements toward your long-term goal and remind.</p>
+                        <h2>{serviceName}</h2>
+                        <p>{short_desc}</p>
                     </div>
                     <button onClick={servicePage}>See Details</button>
                 </div>
-                <div className="service-card">
+                {/* <div className="service-card">
                     <div className="service-img">
                         <img src={service6} alt="" />
                         <div className="special-icons">
@@ -93,7 +102,7 @@ const ServiceHomePage = () => {
                         <p>Success isn’t really that difficult. There is a significant portion of the population.</p>
                     </div>
                     <button onClick={servicePage}>See Details</button>
-                </div>
+                </div> */}
         </div>
     );
 };

@@ -9,15 +9,27 @@ import service5 from '../../assets/img/Services/services (5).jpg';
 import service6 from '../../assets/img/Services/services (6).jpg';
 import { useNavigate } from 'react-router';
 import { useGetGymServicesQuery } from '../../features/gymServiceApi/gymServiceApi';
+import ServiceHomePage from './ServiceHomePage/ServiceHomePage';
+import ClipLoader from 'react-spinners/ClipLoader';
 // import { useGetGymServicesMutation } from '../../features/gymServiceApi/gymServiceApi';
 
 const Services = () => {
-    const navigate = useNavigate();
-    const servicePage= () => {
-        navigate('/serviceDetails');
-    }
+
+    // --- Loading service detail data from redux toolkit api
     const{data, isLoading, isError, error} = useGetGymServicesQuery();
-    console.log(data) ; 
+    
+    // --- deciding what to print while loading data 
+    let content = null ; 
+    if(isLoading && !isError){
+        content = <div className=""><ClipLoader color="white" size={15} /></div>
+    } 
+    if(!isLoading && isError){
+        console.log(error);
+        content = <div className="">There was an error loading the content</div>
+    }
+    if(!isLoading && !isError && data.length>0){
+        content = data.map(index=><ServiceHomePage data={index} key={index.serviceId}></ServiceHomePage>)
+    }
     return (
         <div className="service-section">
             <div className="service-header">
@@ -26,7 +38,7 @@ const Services = () => {
                 <hr />
             </div>
             <div className="service-details">
-                
+                {content}
             </div>
         </div>
     );
