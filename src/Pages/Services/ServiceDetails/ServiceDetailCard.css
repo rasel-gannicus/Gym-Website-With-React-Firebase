@@ -3,7 +3,7 @@
 .service-card-details{
     background: white;
     color: black;
-    height: 150%;
+    min-height: 200% !important;
     padding-bottom: 20rem;
 }
 
@@ -58,6 +58,13 @@
     border: none;
     font-size: 18px;
     font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.detail-card-single button:hover {
+    background: white;
+    color: black;
+    border: 1px solid black;
 }
 .service-button-div{
     /* border: 1px solid grey; */
