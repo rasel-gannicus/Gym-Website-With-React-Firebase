@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router';
 
 const ServiceHomePage = ({ data }) => {
 
-    const { serviceId, plan, serviceName, short_desc, img, basic_plan } = data;
+    const { serviceId, plan, serviceName, short_desc, img, allPlan } = data;
 
     // --- navigating to individual service detail page when user will click see more button
     const navigate = useNavigate();
     const servicePage = () => {
-        navigate('/serviceDetails');
+        navigate(`/serviceDetails/${serviceId}`);
     }
     return (
         <div className="service-card">
@@ -16,9 +16,9 @@ const ServiceHomePage = ({ data }) => {
                 <div className="service-img">
                     <img src={img} alt="" />
                     <div className="special-icons">
-                        <p>$ {basic_plan.price}</p>
-                        <p>{basic_plan.duration} Months</p>
-                        <p>{basic_plan.hrsPerWeek} hrs/week</p>
+                        <p>$ {allPlan[0].price}</p>
+                        <p>{allPlan[0].duration} Months</p>
+                        <p>{allPlan[0].hrsPerWeek} hrs/week</p>
                     </div>
                 </div>
                 <div className="card-details">

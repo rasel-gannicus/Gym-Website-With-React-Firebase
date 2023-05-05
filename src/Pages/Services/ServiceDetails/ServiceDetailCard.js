@@ -5,13 +5,14 @@ import './ServiceDetailCard.css';
 import check from '../../../assets/img/check.png';
 import close from '../../../assets/img/close.png';
 
-const ServiceDetailCard = () => {
-    console.log(faCheck);
+const ServiceDetailCard = ({service}) => {
+    const {Aerobics, cardio, crossfit, plan, price,shortDesc,snacks,swimmingPool,vipRestroom} = service ;
+    console.log(plan);
     return (
         <div className="detail-cards">
             <div className="detail-card-single">
                 <div className="detail-card-header">
-                    <h2>Basic</h2>
+                    <h2>{plan}</h2>
                     <hr className="horizontal" />
                     <p>Positive pleasure-oriented goals are much more powerful.</p>
                     <h1>$ 12<span>/Month</span> </h1>

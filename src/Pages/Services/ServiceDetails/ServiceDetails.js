@@ -1,11 +1,35 @@
 import React from 'react';
+import { useParams } from 'react-router';
 import ServiceDetailCard from './ServiceDetailCard';
+import { useGetGymServicesQuery } from '../../../features/gymServiceApi/gymServiceApi';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 const ServiceDetails = () => {
+    const params = useParams();
+
+     // --- Loading service detail data from redux toolkit api
+     const{data, isLoading, isError, error} = useGetGymServicesQuery();
+    
+     // --- deciding what to print while loading data 
+     let content = null ; 
+     if(isLoading && !isError){
+         content = <div className="custom-loader"><ClipLoader color="black" size={75} /></div>
+     } 
+     if(!isLoading && isError){
+         console.log(error);
+         content = <div className="">There was an error loading the content</div>
+     }
+     let content2 = null ; 
+     if(!isLoading && !isError && data.length>0){
+        content2 = data[params.id].allPlan;
+         console.log(content2);
+         content = content2.map(index=><ServiceDetailCard service={index} ></ServiceDetailCard>)
+     }
+    
     return (
         <div className="service-card-details">
             <h2>Service Details here</h2>
-            <ServiceDetailCard></ServiceDetailCard>
+            {content}
         </div>
     );
 };

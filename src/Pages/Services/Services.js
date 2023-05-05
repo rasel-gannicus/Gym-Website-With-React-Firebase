@@ -1,17 +1,8 @@
 import React from 'react';
 import './Services.css';
-
-import service1 from '../../assets/img/Services/services (1).jpg';
-import service2 from '../../assets/img/Services/services (2).jpg';
-import service3 from '../../assets/img/Services/services (7).jpg';
-import service4 from '../../assets/img/Services/services (4).jpg';
-import service5 from '../../assets/img/Services/services (5).jpg';
-import service6 from '../../assets/img/Services/services (6).jpg';
-import { useNavigate } from 'react-router';
 import { useGetGymServicesQuery } from '../../features/gymServiceApi/gymServiceApi';
 import ServiceHomePage from './ServiceHomePage/ServiceHomePage';
 import ClipLoader from 'react-spinners/ClipLoader';
-// import { useGetGymServicesMutation } from '../../features/gymServiceApi/gymServiceApi';
 
 const Services = () => {
 
@@ -21,7 +12,7 @@ const Services = () => {
     // --- deciding what to print while loading data 
     let content = null ; 
     if(isLoading && !isError){
-        content = <div className=""><ClipLoader color="white" size={15} /></div>
+        content = <div className=""><ClipLoader color="black" size={15} /></div>
     } 
     if(!isLoading && isError){
         console.log(error);
