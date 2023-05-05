@@ -1,9 +1,10 @@
 import React from 'react';
+import './UserService.css';
 
 const UserService = () => {
     return (
-        <div>
-            <h2>User Service Here</h2>
+        <div className='user-service'>
+            <h2>Secret Service Here !</h2>
         </div>
     );
 };
