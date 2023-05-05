@@ -150,6 +150,12 @@ const Register = () => {
                 </form>
             </div>
 
+            
+            <div className="forgot-link">
+                <span>Have an account ? &nbsp; </span>
+                <span><Link to="/login">Login</Link></span>
+            </div>
+
             {/* === social login === */}
             <div className="social-login">
                 <p>Or Sign in using </p>
