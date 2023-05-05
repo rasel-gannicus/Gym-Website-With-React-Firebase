@@ -90,7 +90,7 @@ For mobile:
         margin: 70px auto;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        row-gap: 30px;
+        row-gap: 60px;
         column-gap: 30px;
     }
 }
@@ -103,8 +103,8 @@ For ipads, tablet:
         width: 80%;
         margin: 70px auto;
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        row-gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 60px;
         column-gap: 30px;
     }
 }
@@ -118,7 +118,7 @@ For ipads, tablet:
         margin: 70px auto;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        row-gap: 30px;
+        row-gap: 60px;
         column-gap: 30px;
     }
 }

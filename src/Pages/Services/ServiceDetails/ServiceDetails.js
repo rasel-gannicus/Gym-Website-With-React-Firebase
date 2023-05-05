@@ -32,7 +32,6 @@ const ServiceDetails = () => {
             <div className="detail-cards">
                 {content}
             </div>
-
         </div>
     );
 };
