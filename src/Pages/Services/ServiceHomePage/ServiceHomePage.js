@@ -10,6 +10,7 @@ const ServiceHomePage = ({ data }) => {
     const servicePage = () => {
         navigate(`/serviceDetails/${serviceId}`);
     }
+    console.log(serviceId)
     return (
         <div className="service-card">
             <div className="">

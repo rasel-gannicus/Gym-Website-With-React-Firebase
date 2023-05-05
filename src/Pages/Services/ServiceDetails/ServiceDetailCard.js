@@ -7,7 +7,7 @@ import close from '../../../assets/img/close.png';
 
 const ServiceDetailCard = ({ service }) => {
     const { Aerobics, cardio, crossfit, plan, price, shortDesc, snacks, swimmingPool, vipRestroom } = service;
-    console.log(service);
+    
     return (
         <div className="detail-card-single">
             <div className="detail-card-header">
@@ -19,27 +19,27 @@ const ServiceDetailCard = ({ service }) => {
             <div className="detail-card-details">
                 <div className="">
                     <p>Cardio</p>
-                    <span><img src={check} alt="" /></span>
+                    <span>{cardio ? <img src={check} alt="" /> : <img src={close} alt="" />}</span>
                 </div>
                 <div className="">
                     <p>Swimming Pool</p>
-                    <span><img src={close} alt="" /></span>
+                    <span>{swimmingPool ? <img src={check} alt="" /> : <img src={close} alt="" />}</span>
                 </div>
                 <div className="">
                     <p>Snacks</p>
-                    <span><img src={close} alt="" /></span>
+                    <span>{snacks ? <img src={check} alt="" /> : <img src={close} alt="" />}</span>
                 </div>
                 <div className="">
                     <p>Vip Restroom</p>
-                    <span><img src={close} alt="" /></span>
+                    <span>{vipRestroom ? <img src={check} alt="" /> : <img src={close} alt="" />}</span>
                 </div>
                 <div className="">
                     <p>Aerobics</p>
-                    <span><img src={check} alt="" /></span>
+                    <span>{Aerobics ? <img src={check} alt="" /> : <img src={close} alt="" />}</span>
                 </div>
                 <div className="">
                     <p>Crossfit</p>
-                    <span><img src={check} alt="" /></span>
+                    <span>{crossfit ? <img src={check} alt="" /> : <img src={close} alt="" />}</span>
                 </div>
             </div>
             <div className="service-button-div">

@@ -21,13 +21,13 @@ const ServiceDetails = () => {
     }
     let content2 = null;
     if (!isLoading && !isError && data.length > 0) {
-        content2 = data[params.id].allPlan;
+        content2 = data[params.id-1].allPlan;
         content = content2.map(index => <ServiceDetailCard service={index} key={index.plan} ></ServiceDetailCard>)
     }
 
     return (
         <div className="service-card-details">
-            <h1 className='service-card-header'>{data?.length > 0 && data[params.id]?.serviceName}</h1>
+            <h1 className='service-card-header'>{data?.length > 0 && data[params.id-1]?.serviceName}</h1>
             <div className="detail-cards">
                 {content}
             </div>
