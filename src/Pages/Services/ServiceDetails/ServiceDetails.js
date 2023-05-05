@@ -22,7 +22,6 @@ const ServiceDetails = () => {
     let content2 = null;
     if (!isLoading && !isError && data.length > 0) {
         content2 = data[params.id].allPlan;
-        console.log(content2);
         content = content2.map(index => <ServiceDetailCard service={index} key={index.plan} ></ServiceDetailCard>)
     }
 

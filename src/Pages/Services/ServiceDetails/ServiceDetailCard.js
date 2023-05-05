@@ -7,13 +7,14 @@ import close from '../../../assets/img/close.png';
 
 const ServiceDetailCard = ({ service }) => {
     const { Aerobics, cardio, crossfit, plan, price, shortDesc, snacks, swimmingPool, vipRestroom } = service;
+    console.log(service);
     return (
         <div className="detail-card-single">
             <div className="detail-card-header">
                 <h2>{plan}</h2>
                 <hr className="horizontal" />
-                <p>Positive pleasure-oriented goals are much more powerful.</p>
-                <h1>$ 12<span>/Month</span> </h1>
+                <p>{shortDesc}</p>
+                <h1>$ {price}<span>/Month</span> </h1>
             </div>
             <div className="detail-card-details">
                 <div className="">
