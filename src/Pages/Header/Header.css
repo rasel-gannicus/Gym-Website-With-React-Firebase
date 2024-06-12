@@ -1,31 +1,30 @@
-
-.full-header{
-    max-width: 2050px;
-    margin:  auto;
-    min-height: 100vh;
-    background: url('../../assets/img/bg\ \(1\).jpg') no-repeat;
-    background-position: top ;
-    background-size: cover;
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 25px rgba(0,0,0,0.5);
+.full-header {
+  max-width: 2050px;
+  margin: auto;
+  min-height: 100vh;
+  background: url("../../assets/img/bg\ \(1\).jpg") no-repeat;
+  background-position: top;
+  background-size: cover;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
 }
-.header-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-    z-index: 99999;
-    max-width: 1750px;
-    padding: 0 45px;
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  z-index: 99999;
+  max-width: 1750px;
+  padding: 0 45px;
 }
 
-.header-right-menu{
+.header-right-menu {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.header-nav.sticky{
+.header-nav.sticky {
   position: fixed;
   top: 5px;
   left: 50%;
@@ -35,83 +34,85 @@
   border-radius: 10px;
   padding: 0 25px;
   background: black;
-  border: 2px solid #0EACF5;
+  border: 2px solid #0eacf5;
 }
-.header-left{
-    text-transform: uppercase;
+.header-left {
+  text-transform: uppercase;
 }
 .header-left h1 {
-  color: #0DACF5;
+  color: #0dacf5;
 }
 
-.header-right a{
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 500;
-    margin: 0 15px;
-    color: white;
+.header-right a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 15px;
+  color: white;
 }
-.header-right a:hover{
-    color: #0d73a3;
+.header-right a:hover {
+  color: #0d73a3;
 }
-
 
 /* --- menu icon --- */
-.menu-icon img{
+.menu-icon img {
   width: 40px;
   cursor: pointer;
 }
 
-.menuOne, .menuTwo, .menu-icon {
+.menuOne,
+.menuTwo,
+.menu-icon {
   display: none;
 }
 
-.user-name{
+.user-name {
   text-align: right !important;
-  color: tomato ;
+  color: tomato;
   margin-right: 15px;
   /* margin-bottom: -12px; */
 }
 
-
-.profile-pop-main{
+.profile-pop-main {
   position: relative;
   cursor: pointer;
 }
-.profile-pop-anchor{
+.profile-pop-anchor {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.caret-right, .caret-down{
+.caret-right,
+.caret-down {
   margin-left: 7px;
   /* border: 1px solid white; */
   display: block;
   width: 17px !important;
   cursor: pointer;
   /* padding: 0 3px; */
-}  
-.caret-down{
+}
+.caret-down {
   display: none;
 }
-.caret-down, .caret-right{
+.caret-down,
+.caret-right {
   pointer-events: none;
   transition: all 0.3s;
 }
-.profile-pop-main.active .caret-right{
+.profile-pop-main.active .caret-right {
   /* display: none; */
   transform: rotate(90deg);
   margin-top: 5px;
 }
-.profile-pop-main.active .caret-down{
+.profile-pop-main.active .caret-down {
   /* display: block; */
 }
 
-.profile-pop-main.active .profile-pop{
+.profile-pop-main.active .profile-pop {
   scale: 1;
   top: 30px;
 }
-.profile-pop{
+.profile-pop {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -121,40 +122,44 @@
   position: absolute;
   /* left: 0; */
   right: 15px;
-  top:  30px;
+  top: 30px;
   scale: 0;
   padding: 0 25px;
   text-align: right;
   transition: all 0.2s;
   transform-origin: top right;
   min-width: 250px;
-  box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 }
-.profile-pop p{
+.profile-pop p {
   width: 100%;
   padding: 0 50px;
   margin: 10px 0;
   cursor: pointer;
 }
 
-.profile-pop p:last-child:hover{
+.profile-pop p:last-child:hover {
   color: blue;
 }
 
 /*--------------------------------------------------------------------------
 For mobile:  
 ---------------------------------------------------------------------------*/
-@media only screen and (max-width:480px){
-    /* --- Banner section --- */
-    .full-header{
-      width:90% !important;
-      margin: 30px auto;
-      min-height: 600px;
-      background-position: center  !important;
-      /* margin-top: 25%; */
+@media only screen and (max-width: 480px) {
+  /* --- Banner section --- */
+  .full-header {
+    min-height: 600px;
+    width: 100% !important;
+    margin: 30px auto;
+    background: url("../../assets/img/bg2\ \(1\).jpg");
+    background-size: cover;
+    background-position: top !important;
+    background-repeat: no-repeat;
+    /* border: 3px solid rgb(138, 22, 22); */
   }
-  .header-nav, .header-nav.sticky{
+  .header-nav,
+  .header-nav.sticky {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -165,11 +170,11 @@ For mobile:
     left: 0;
     width: 100%;
     border: none;
-}
-  .header-left{
+  }
+  .header-left {
     margin-left: 5%;
   }
-  .header-right{
+  .header-right {
     /* display: none; */
     position: fixed;
     display: flex;
@@ -183,97 +188,116 @@ For mobile:
     width: 60%;
     transition: all 0.3s;
   }
-  .header-right.active{
+  .header-right.active {
     left: 0;
   }
-  .header-right-menu{
+  .header-right-menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     row-gap: 25px;
   }
-  .banner-details{
-    width: 90% !important;
-    margin-left: 15px !important;
-    margin-top: 80px;
+
+
+  .banner-div {
+    display: flex ; 
+    flex-direction: column !important;
+    justify-content: start;
+    align-items: center;
+    max-width: 1750px;
+    margin: auto;
+    padding: 0 35px;
+    height: 100vh;
   }
-  .banner-details h1 { 
+  .banner-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    background: rgba(0, 0, 0, 0.351);
+    margin: unset;
+    min-height: 700px;
+    margin-top: 30px;
+  }
+  .banner-details p{
+    display: none;
+  }
+  .banner-details h1 {
     font-size: 25px;
     line-height: 60px;
     font-weight: 600;
   }
 
-  .menu-icon{
+  .menu-icon {
     display: block;
     padding-right: 10px;
   }
-  .menuOne{
+  .menuOne {
     display: block;
   }
-  .menuOne.active{
+  .menuOne.active {
     display: none;
   }
-  
-  .menuTwo.active{
+
+  .menuTwo.active {
     display: block;
   }
-  
-  
-  }
-  
-  /*--------------------------------------------------- 
+}
+
+
+
+/*--------------------------------------------------- 
   For ipads, tablet:  
   ---------------------------------------------------*/
-  @media only screen and (min-width:481px) and (max-width:768px) {
-    .full-header{
-      width:90% !important;
-      margin: 30px auto;
-      min-height: 600px;
-      background-position: center  !important;
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .full-header {
+    width: 90% !important;
+    margin: 30px auto;
+    min-height: 600px;
+    background-position: center !important;
   }
-  .header-right a{
+  .header-right a {
     text-decoration: none;
     font-size: 15px;
     font-weight: 500;
     margin: 0 7px;
     color: white;
-}
-.profile-pop-main.active .caret-right{
-  /* display: none; */
-  transform: rotate(90deg);
-  margin-top: 5px;
-}
   }
-  
-  /*-----------------------------------------
+  .profile-pop-main.active .caret-right {
+    /* display: none; */
+    transform: rotate(90deg);
+    margin-top: 5px;
+  }
+}
+
+/*-----------------------------------------
    For Small screen, laptop:  
   -----------------------------------------*/
-  @media only screen and (min-width:769px) and (max-width:1024px) {
-    .full-header{
-      width:90% !important;
-      margin: 30px auto;
-      min-height: 600px;
-      background-position: center  !important;
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .full-header {
+    width: 90% !important;
+    margin: 30px auto;
+    min-height: 600px;
+    background-position: center !important;
   }
-  .header-right a{
+  .header-right a {
     text-decoration: none;
     font-size: 15px;
     font-weight: 500;
     margin: 0 7px;
     color: white;
-}
-.profile-pop-main.active .caret-right{
-  /* display: none; */
-  transform: rotate(90deg);
-  margin-top: 5px;
-}
   }
-  
-
-  .logout{
-    color: red;
-    font-weight: 600;
+  .profile-pop-main.active .caret-right {
+    /* display: none; */
+    transform: rotate(90deg);
+    margin-top: 5px;
   }
+}
 
-  
+.logout {
+  color: red;
+  font-weight: 600;
+}
