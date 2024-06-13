@@ -152,6 +152,7 @@ const Navbar = () => {
         </div>}
 
       </div>
+      
       <div className="menu-icon">
         <img onClick={displayMenu} className="menuOne" src={menuOne} alt="" />
         <img onClick={hideMenu} className="menuTwo" src={menuTwo} alt="" />
